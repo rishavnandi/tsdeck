@@ -5,4 +5,4 @@ compatibility_flags = ["nodejs_compat"]
 
 [[kv_namespaces]]
 binding = "TSDECK_KV"
-id = "your_kv_namespace_id"
+id = "fccd72a589434b858f3d36235eced400"
