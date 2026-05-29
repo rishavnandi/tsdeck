@@ -249,13 +249,13 @@ assemble_compose() {
 
 start_containers() {
   if [[ "$DRY_RUN" == "1" ]]; then
-    log_info "[DRY-RUN] Would start containers: docker compose up -d --remove-orphans"
+    log_info "[DRY-RUN] Would start containers: docker compose up -d --remove-orphans --force-recreate"
     return
   fi
-  log_info "Starting containers..."
-  if ! (cd "$TSDECK_DIR" && docker compose up -d --remove-orphans); then
+  log_info "Starting containers (forcing recreate to pick up label changes)..."
+  if ! (cd "$TSDECK_DIR" && docker compose up -d --remove-orphans --force-recreate); then
     log_warn "docker compose failed. Trying with sudo..."
-    (cd "$TSDECK_DIR" && sudo docker compose up -d --remove-orphans) || {
+    (cd "$TSDECK_DIR" && sudo docker compose up -d --remove-orphans --force-recreate) || {
       log_error "Failed to start containers even with sudo."
       exit 1
     }
