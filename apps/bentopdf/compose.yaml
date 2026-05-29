@@ -1,0 +1,15 @@
+services:
+  bentopdf:
+    image: ghcr.io/alam00000/bentopdf:latest
+    container_name: bentopdf
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - bentopdf-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "bentopdf"
+    restart: always
+
+volumes:
+  bentopdf-config:

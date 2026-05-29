@@ -1,0 +1,15 @@
+name: Tailscale Subnet Router Node
+description: Tailscale Subnet Router Node securely connects your entire physical local network to your Tailnet. It allows devices on your Tailnet to access resources in specified local subnets without needing to install Tailscale client software on each individual local device.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png
+warnings:
+  - Requires a valid Tailscale Auth Key (TS_AUTHKEY) to register the subnet router node.
+  - Requires the NET_ADMIN capability and access to the host's TUN device (/dev/net/tun) to configure networking.
+  - IP forwarding must be enabled on the host machine to route traffic to physical subnets.
+required_env_vars:
+  - name: TS_AUTHKEY
+    description: Tailscale Auth Key (tskey-auth-...) to authorize this subnet router in your Tailnet
+    default: tskey-auth-change-me
+  - name: SUBNET_ROUTES
+    description: Comma-separated subnet routes to advertise (e.g., 192.168.1.0/24)
+    default: 192.168.1.0/24

@@ -1,0 +1,18 @@
+services:
+  pingvin-share:
+    image: stonith404/pingvin-share:latest
+    container_name: pingvin-share
+    environment:
+      - TRUST_PROXY=false
+      - TZ=${TZ}
+    volumes:
+      - pingvin-share-data:/opt/app/backend/data
+      - pingvin-share-images:/opt/app/frontend/public/img
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "pingvin-share"
+    restart: always
+
+volumes:
+  pingvin-share-data:
+  pingvin-share-images:

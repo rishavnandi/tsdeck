@@ -1,0 +1,17 @@
+name: Komodo
+description: Komodo is a lightning-fast, self-hosted container management and deployment tool that lets you manage Docker containers, stacks, and deployments across multiple servers.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/komodo.png
+warnings:
+  - Requires a secure passkey and JWT secret for authentication. Mounts the host's /var/run/docker.sock to manage containers across your server.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the containers
+    default: Europe/Amsterdam
+  - name: KOMODO_PASSKEY
+    description: Secret passkey used to authenticate periphery agents and admin CLI commands
+    default: ""
+  - name: KOMODO_JWT_SECRET
+    description: Secret key for signing user authentication tokens (generate with openssl rand -hex 32)
+    default: ""
+

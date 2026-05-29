@@ -1,0 +1,14 @@
+name: Jellyfin
+description: Jellyfin is a free, open-source, self-hosted media system that lets you stream and manage your movies, TV shows, music, and photos. It offers full privacy control with no tracking, no premium subscription model, and has apps across major platforms.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png
+warnings:
+  - Hardware transcoding requires passing GPU devices or hardware acceleration drivers to the container.
+  - Video transcoding is highly resource-intensive and can cause heavy CPU utilization if hardware acceleration is not configured.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

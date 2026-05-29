@@ -1,0 +1,7 @@
+name: Portainer
+description: Portainer is a lightweight, web-based container management interface that simplifies the deployment, monitoring, and administration of Docker containers, volumes, and networks.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png
+warnings:
+  - Exposing the Docker socket (/var/run/docker.sock) grants Portainer root-level privileges over the host system; ensure access is strictly secured.
+required_env_vars: []

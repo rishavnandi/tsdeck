@@ -1,0 +1,17 @@
+name: Bazarr
+description: Bazarr is a companion application to Sonarr and Radarr that automates the downloading and management of subtitles in multiple languages. It scans your media libraries, fetches matching subtitles from various providers, and saves them directly alongside your video files.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/bazarr.png
+depends_on:
+  - sonarr
+  - radarr
+warnings:
+  - Bazarr requires access to the same physical media directories as Sonarr and Radarr to successfully match and write subtitle files.
+  - Ensure you configure appropriate API rate limits or delay rules to prevent being banned by third-party subtitle providers.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

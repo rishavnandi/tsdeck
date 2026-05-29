@@ -1,0 +1,13 @@
+name: qBittorrent
+description: qBittorrent is a lightweight, open-source BitTorrent client with a built-in web UI, support for search plugins, sequential downloading, and detailed torrent creation controls.
+category: downloads
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png
+warnings:
+  - Requires significant disk space and write I/O. Use of an external VPN or proxy is highly recommended to protect your public IP when downloading torrents.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

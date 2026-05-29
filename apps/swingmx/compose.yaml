@@ -1,0 +1,18 @@
+services:
+  swingmx:
+    image: ghcr.io/swingmx/swingmusic:latest
+    container_name: swingmx
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - swingmx-config:/config
+      - ${SWINGMX_MUSIC_PATH}:/music
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "swingmx"
+    restart: always
+
+volumes:
+  swingmx-config:

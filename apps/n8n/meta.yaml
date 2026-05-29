@@ -1,0 +1,10 @@
+name: n8n
+description: n8n is an extendable workflow automation tool that enables you to connect various APIs, databases, and SaaS tools without writing code. It features a powerful node-based visual designer, robust error-handling, and self-hostable execution for secure data integrations.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/n8n.png
+warnings:
+  - Running complex workflow automations with high execution frequency or processing large payloads can consume significant memory and disk storage.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container and workflows
+    default: Europe/Amsterdam

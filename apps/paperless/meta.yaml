@@ -1,0 +1,16 @@
+name: Paperless
+description: Paperless-ngx is a document management system that transforms your physical documents into a searchable digital archive. It features OCR powered by Tesseract, automated tagging and classification, full-text search, and multi-user support.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/paperless-ngx.png
+warnings:
+  - OCR and document consumption are CPU-intensive and can cause heavy load spikes during processing.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: PAPERLESS_ADMIN_USER
+    description: Username for your Paperless admin account
+    default: admin
+  - name: PAPERLESS_ADMIN_PASSWORD
+    description: Password for your Paperless admin account
+    default: ""

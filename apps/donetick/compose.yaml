@@ -1,0 +1,19 @@
+services:
+  donetick:
+    image: docker.io/donetick/donetick:latest
+    container_name: donetick
+    environment:
+      - TZ=${TZ}
+      - DT_ENV=selfhosted
+      - DT_SQLITE_PATH=/donetick-data/donetick.db
+    volumes:
+      - donetick-config:/config
+      - donetick-data:/donetick-data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "donetick"
+    restart: always
+
+volumes:
+  donetick-config:
+  donetick-data:

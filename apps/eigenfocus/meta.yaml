@@ -1,0 +1,10 @@
+name: Eigenfocus
+description: Eigenfocus is a self-hosted, privacy-focused task and project management tool that helps individuals and teams stay organized with structured, minimalist workflows.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/camera-ui.png
+warnings:
+  - Keep the data volume securely backed up to prevent any loss of project or task history.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

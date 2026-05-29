@@ -1,0 +1,11 @@
+name: Ntfy
+description: Ntfy is a simple, HTTP-based publish-subscribe notification service that allows you to send push notifications to your phone or desktop via scripts, curl requests, or custom webhooks. It is highly lightweight, privacy-focused, and has native apps for Android and iOS.
+category: communication
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ntfy.png
+warnings:
+  - By default, anyone who knows your topic name can read or send notifications unless you explicitly configure access control lists (ACLs) in the ntfy configuration file.
+  - To receive push notifications on iOS devices using the official ntfy app, a public HTTPS endpoint or integration with the official upstream server is required due to Apple APNS limitations.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

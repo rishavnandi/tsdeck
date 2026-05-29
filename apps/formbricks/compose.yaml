@@ -1,0 +1,58 @@
+services:
+  formbricks:
+    image: ghcr.io/formbricks/formbricks:latest
+    container_name: formbricks
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - WEBAPP_URL=${WEBAPP_URL}
+      - NEXTAUTH_URL=${WEBAPP_URL}
+      - DATABASE_URL=postgresql://postgres:postgres@formbricks-db:5432/formbricks?schema=public
+      - NEXTAUTH_SECRET=7b62c37371798cf96dc019f3d4f712a27d1b05d0755ffcf96481b8504697f532
+      - ENCRYPTION_KEY=i1e284266e3f7ace4772e329e0494aa1d6110fba48db06bd9652e7a9fdd167281
+      - CRON_SECRET=b5af3d39789e7730004a01bb84922914ea0b478fe67784ce3fa8e4c35096d6b4
+      - REDIS_URL=redis://formbricks-redis:6379
+      - LOG_LEVEL=info
+    volumes:
+      - formbricks-config:/config
+      - formbricks-saml:/home/nextjs/apps/web/saml-connection
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "formbricks"
+    depends_on:
+      formbricks-db:
+        condition: service_healthy
+      formbricks-redis:
+        condition: service_healthy
+    restart: always
+
+  formbricks-db:
+    image: pgvector/pgvector:pg17
+    container_name: formbricks-db
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=formbricks
+    volumes:
+      - formbricks-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  formbricks-redis:
+    image: redis:7.2-alpine
+    container_name: formbricks-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  formbricks-config:
+  formbricks-saml:
+  formbricks-db-data:

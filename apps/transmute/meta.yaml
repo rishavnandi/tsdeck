@@ -1,0 +1,10 @@
+name: Transmute
+description: Transmute is an open-source, self-hosted file conversion platform that supports converting images, video, audio, documents, and fonts locally. It prioritizes complete privacy and features an integrated REST API for seamless automation across your services.
+category: downloads
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png
+warnings:
+  - Conversion of large media files (such as 4K videos or heavy images) is highly CPU and RAM intensive; ensure your host system has sufficient resources allocated.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

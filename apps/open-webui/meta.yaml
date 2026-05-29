@@ -1,0 +1,13 @@
+name: Open Webui
+description: Open WebUI is a user-friendly, feature-rich self-hosted web interface designed for local large language models. It integrates seamlessly with Ollama and OpenAI-compatible APIs, offering support for multi-modal interactions, retrieval-augmented generation (RAG), and agent creation.
+category: ai
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/open-webui.png
+depends_on:
+  - ollama
+warnings:
+  - Requires a running Ollama instance to perform AI model inference.
+  - By default, the first user registered becomes the administrator, who can then manage access for subsequent users.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

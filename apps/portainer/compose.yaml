@@ -1,0 +1,14 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "portainer"
+    restart: always
+
+volumes:
+  portainer-data:

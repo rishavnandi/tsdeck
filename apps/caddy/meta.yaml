@@ -1,0 +1,10 @@
+name: Caddy
+description: Caddy is a powerful, enterprise-grade open-source web server with automatic HTTPS, reverse proxy capabilities, and a robust plugin ecosystem.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/caddy.png
+warnings:
+  - You must configure a Caddyfile in the container volumes to define routing and proxy rules.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,10 @@
+name: It Tools
+description: IT Tools is a comprehensive collection of handy, web-based utilities and tools curated specifically for developers and IT professionals. It features a wide variety of tools including encoders/decoders, formatters, generators, and converters in a highly responsive user interface.
+category: utilities
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/it-tools.png
+warnings:
+  - IT Tools is a static client-side web application with very minimal system resource requirements.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

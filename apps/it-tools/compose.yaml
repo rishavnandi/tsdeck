@@ -1,0 +1,10 @@
+services:
+  it-tools:
+    image: corentinth/it-tools:latest
+    container_name: it-tools
+    environment:
+      - TZ=${TZ}
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "it-tools"
+    restart: always

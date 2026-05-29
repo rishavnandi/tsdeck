@@ -1,0 +1,10 @@
+name: Metube
+description: MeTube is a web-based GUI wrapper for yt-dlp, allowing you to easily download videos and audio from YouTube and dozens of other websites. It features a simple queue system, custom download directory mapping, and supports downloading playlists, channels, or individual videos.
+category: downloads
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png
+warnings:
+  - Downloading high-resolution videos or large playlists is highly CPU and disk-write intensive and may temporarily slow down host performance.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

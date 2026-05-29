@@ -1,0 +1,17 @@
+services:
+  isley:
+    image: dwot/isley:latest
+    container_name: isley
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - isley-db:/app/data
+      - isley-uploads:/app/uploads
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "isley"
+    restart: always
+
+volumes:
+  isley-db:
+  isley-uploads:

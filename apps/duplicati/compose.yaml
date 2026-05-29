@@ -1,0 +1,18 @@
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - duplicati-config:/config
+      - ${DATA_DIR}:/source
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "duplicati"
+    restart: always
+
+volumes:
+  duplicati-config:

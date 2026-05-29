@@ -1,0 +1,7 @@
+name: Docmost
+description: Docmost is an open-source, collaborative wiki and documentation software designed for teams. It features real-time collaborative editing, hierarchical page organization, a rich-text block editor, and granular permissions management.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/docmost.png
+warnings:
+  - Docmost requires separate database and Redis cache containers; ensure no naming or port conflicts exist with other Postgres or Redis containers on the network.
+required_env_vars: []

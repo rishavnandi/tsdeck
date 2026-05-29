@@ -1,0 +1,77 @@
+services:
+  paperless:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    container_name: paperless
+    depends_on:
+      paperless-db:
+        condition: service_healthy
+      paperless-broker:
+        condition: service_healthy
+    restart: always
+    volumes:
+      - paperless-data:/usr/src/paperless/data
+      - paperless-media:/usr/src/paperless/media
+      - paperless-export:/usr/src/paperless/export
+      - paperless-consume:/usr/src/paperless/consume
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - PAPERLESS_TIME_ZONE=${TZ}
+      - PAPERLESS_OCR_LANGUAGE=eng
+      - PAPERLESS_SECRET_KEY=tsdeck_paperless_secret_key_changeme
+      - PAPERLESS_PORT=8000
+      - PAPERLESS_PROXY_SSL_HEADER=["HTTP_X_FORWARDED_PROTO", "https"]
+      - PAPERLESS_ADMIN_USER=${PAPERLESS_ADMIN_USER}
+      - PAPERLESS_ADMIN_PASSWORD=${PAPERLESS_ADMIN_PASSWORD}
+      - PAPERLESS_REDIS=redis://paperless-broker:6379
+      - PAPERLESS_DBHOST=paperless-db
+      - PAPERLESS_DBUSER=paperless
+      - PAPERLESS_DBPASS=tsdeck_paperless_db_pass
+      - PAPERLESS_DBNAME=paperless
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "paperless"
+
+  paperless-db:
+    image: postgres:16-alpine
+    container_name: paperless-db
+    restart: always
+    volumes:
+      - paperless-db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=paperless
+      - POSTGRES_USER=paperless
+      - POSTGRES_PASSWORD=tsdeck_paperless_db_pass
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U paperless"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  paperless-broker:
+    image: redis:7.2-alpine
+    container_name: paperless-broker
+    restart: always
+    volumes:
+      - paperless-broker-data:/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  paperless-data:
+  paperless-media:
+  paperless-export:
+  paperless-consume:
+  paperless-db-data:
+  paperless-broker-data:

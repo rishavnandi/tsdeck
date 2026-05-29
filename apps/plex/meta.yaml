@@ -1,0 +1,13 @@
+name: Plex
+description: Plex is a powerful media server platform that organizes your personal video, music, and photo libraries, streaming them seamlessly to any device with rich metadata.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/plex.png
+warnings:
+  - Hardware transcoding requires passing GPU devices or hardware acceleration drivers to the container.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: PLEX_CLAIM
+    description: Plex claim token to automatically associate the server with your Plex account (obtain from plex.tv/claim)
+    default: ""

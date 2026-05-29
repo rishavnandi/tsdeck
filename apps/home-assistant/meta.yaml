@@ -1,0 +1,11 @@
+name: Home Assistant
+description: Home Assistant is a robust self-hosted home automation platform that prioritizes local control and privacy. It acts as a central hub that integrates tens of thousands of smart home devices, allowing you to create complex automations and custom dashboards.
+category: automation
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
+warnings:
+  - Requires a privileged container execution to access host USB devices (e.g., Zigbee/Z-Wave dongles) and system hardware drivers.
+  - Must be run in host network mode or have proper network routing configured to reliably discover local smart devices via mDNS/UPnP.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

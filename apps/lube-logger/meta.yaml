@@ -1,0 +1,13 @@
+name: LubeLogger
+description: LubeLogger is a self-hosted vehicle management platform that tracks fuel efficiency, maintenance history, parts replacement, and overall vehicle expenses.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lubelogger.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: LUBELOGGER_MOTD
+    description: Message of the day shown on the dashboard login screen
+    default: My Car
+  - name: LUBELOGGER_DOMAIN
+    description: The custom domain name configured for LubeLogger (e.g. lubelogger.local)

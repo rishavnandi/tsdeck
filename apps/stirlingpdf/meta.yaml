@@ -1,0 +1,10 @@
+name: Stirlingpdf
+description: Stirling PDF is a robust, self-hosted web-based PDF manipulation tool that allows you to merge, split, compress, convert, and secure PDF files entirely offline.
+category: utilities
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/stirling-pdf.png
+warnings:
+  - Processing very large PDF files or running optical character recognition (OCR) can be highly CPU and memory intensive.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

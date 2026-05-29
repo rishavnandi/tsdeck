@@ -1,0 +1,8 @@
+name: Heimdall
+description: Heimdall is an elegant and lightweight application dashboard that allows you to easily organize and access all your self-hosted services and bookmarks in one place.
+category: dashboards
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/heimdall.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,16 @@
+services:
+  eigenfocus:
+    image: docker.io/eigenfocus/eigenfocus:latest
+    container_name: eigenfocus
+    environment:
+      - TZ=${TZ}
+      - DEFAULT_HOST_URL=http://127.0.0.1:3000
+    volumes:
+      - eigenfocus-data:/eigenfocus-app/app-data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "eigenfocus"
+    restart: always
+
+volumes:
+  eigenfocus-data:

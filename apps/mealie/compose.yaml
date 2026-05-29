@@ -1,0 +1,23 @@
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:latest
+    container_name: mealie
+    deploy:
+      resources:
+        limits:
+          memory: 1000M
+    environment:
+      ALLOW_SIGNUP: "false"
+      PUID: 1000
+      PGID: 1000
+      TZ: ${TZ}
+      BASE_URL: http://localhost:9000
+    volumes:
+      - mealie-data:/app/data/
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "mealie"
+    restart: always
+
+volumes:
+  mealie-data:

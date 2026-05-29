@@ -1,0 +1,14 @@
+name: Requestrr
+description: Requestrr is a chatbot used to simplify writing and executing commands in Discord for requesting content from services like Sonarr, Radarr, and Jellyseerr. It features seamless automated requests, downloads, and interactive user confirmations directly via Discord.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/requestrr.png
+depends_on:
+  - sonarr
+  - radarr
+  - seerr
+warnings:
+  - Requires a pre-configured Discord Bot Token to function. You will need to create a bot account on the Discord Developer Portal.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

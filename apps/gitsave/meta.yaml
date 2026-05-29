@@ -1,0 +1,13 @@
+name: GitSave
+description: GitSave is an open-source, self-hosted developer tool designed to securely back up Git repositories from various platforms (GitHub, GitLab, Gitea) to local folders or remote destinations.
+category: development
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/git.png
+warnings:
+  - Requires generating unique secure keys for JWT authentication and backups encryption; please supply these keys to ensure data safety.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DISABLE_AUTH
+    description: Disable web login and interface authentication (set to true or false)
+    default: "false"

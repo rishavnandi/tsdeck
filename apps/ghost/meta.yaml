@@ -1,0 +1,8 @@
+name: Ghost
+description: Ghost is a powerful self-hosted publishing platform and content management system designed for professional creators, bloggers, and journalists. It features a rich editor, robust member subscription/newsletter management, and native search engine optimization.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ghost.png
+warnings:
+  - Ghost requires an external database container; ensure no port or container name conflicts exist with the 'ghost-db' service.
+  - You must configure the 'url' environment variable or site settings with your public HTTPS domain for emails and links to work correctly.
+required_env_vars: []

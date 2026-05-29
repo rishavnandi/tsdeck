@@ -1,0 +1,11 @@
+name: XWiki
+description: XWiki is an advanced, enterprise-grade open-source wiki platform that offers extensive customization, structured data handling, and app development capabilities. It enables teams to collaborate, share knowledge, and build powerful wiki-based applications in a highly scalable self-hosted environment.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/xwiki.png
+warnings:
+  - XWiki is resource-intensive and requires a minimum of 2GB RAM to perform optimally under standard usage.
+  - Requires a dedicated MariaDB database container; ensure the database volume is securely backed up.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

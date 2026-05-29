@@ -1,0 +1,16 @@
+services:
+  convertx:
+    image: ghcr.io/c4illin/convertx:latest
+    container_name: convertx
+    environment:
+      - TZ=${TZ}
+      - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234
+    volumes:
+      - convertx-data:/app/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "convertx"
+    restart: always
+
+volumes:
+  convertx-data:

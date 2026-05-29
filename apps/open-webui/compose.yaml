@@ -1,0 +1,17 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - WEBUI_SECRET_KEY=openwebui_secure_secret_key_1234
+      - TZ=${TZ}
+    volumes:
+      - open-webui-data:/app/backend/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "open-webui"
+    restart: always
+
+volumes:
+  open-webui-data:

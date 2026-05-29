@@ -1,0 +1,7 @@
+name: Uptime Kuma
+description: Uptime Kuma is a self-hosted monitoring tool that tracks the availability of websites, services, and containers in real-time, providing multi-channel alerts and customizable status pages.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png
+warnings:
+  - Ensure host network or docker routing allows access to local IPs for internal network monitoring, and secure access as the container mounts /var/run/docker.sock.
+required_env_vars: []

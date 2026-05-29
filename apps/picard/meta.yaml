@@ -1,0 +1,10 @@
+name: MusicBrainz Picard
+description: MusicBrainz Picard is a cross-platform music tagger written in Python that helps organize your digital music collection by identifying and writing audio tags.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/musicbrainz-picard.png
+warnings:
+  - Requires persistent volume mapping for both configuration settings and your music library.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

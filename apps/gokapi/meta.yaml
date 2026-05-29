@@ -1,0 +1,8 @@
+name: Gokapi
+description: Gokapi is a lightweight, secure self-hosted file-sharing service. It allows users to upload files and generate shareable download links that automatically expire after a set time or download limit.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,15 @@
+services:
+  anchor:
+    image: ghcr.io/zhfahim/anchor:latest
+    container_name: anchor
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - anchor-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "anchor"
+    restart: always
+
+volumes:
+  anchor-data:

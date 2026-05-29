@@ -1,0 +1,11 @@
+name: Dashdot
+description: Dashdot is a modern, highly customizable, and glassmorphic system monitoring dashboard designed for homelabs. It visualizes real-time OS, CPU, storage, RAM, and network statistics using a beautiful interface.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png
+warnings:
+  - Requires a privileged container execution to access host-level system metrics.
+  - Mounts the host root filesystem in read-only mode to retrieve accurate disk space usage.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,50 @@
+services:
+  mattermost:
+    image: docker.io/mattermost/mattermost-team-edition:latest
+    container_name: mattermost
+    environment:
+      - TZ=${TZ}
+      - MM_SQLSETTINGS_DRIVERNAME=postgres
+      - MM_SQLSETTINGS_DATASOURCE=postgres://mmuser:mmuser_password@mattermost-db:5432/mattermost?sslmode=disable&connect_timeout=10
+      - MM_BLEVESETTINGS_INDEXDIR=/mattermost/bleve-indexes
+      - MM_SERVICESETTINGS_SITEURL=https://${DOMAIN}
+    volumes:
+      - mattermost-config:/mattermost/config
+      - mattermost-data:/mattermost/data
+      - mattermost-logs:/mattermost/logs
+      - mattermost-plugins:/mattermost/plugins
+      - mattermost-client-plugins:/mattermost/client/plugins
+      - mattermost-bleve-indexes:/mattermost/bleve-indexes
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "mattermost"
+    depends_on:
+      mattermost-db:
+        condition: service_healthy
+    restart: always
+
+  mattermost-db:
+    image: docker.io/postgres:13-alpine
+    container_name: mattermost-db
+    environment:
+      - TZ=${TZ}
+      - POSTGRES_USER=mmuser
+      - POSTGRES_PASSWORD=mmuser_password
+      - POSTGRES_DB=mattermost
+    volumes:
+      - mattermost-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  mattermost-config:
+  mattermost-data:
+  mattermost-logs:
+  mattermost-plugins:
+  mattermost-client-plugins:
+  mattermost-bleve-indexes:
+  mattermost-db-data:

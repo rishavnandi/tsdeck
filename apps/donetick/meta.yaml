@@ -1,0 +1,10 @@
+name: Donetick
+description: Donetick is a simple, lightweight, self-hosted task and checklist manager designed to organize tasks efficiently while keeping your data fully private.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/donetick.png
+warnings:
+  - Keep the sqlite database volume backed up to avoid losing your task history.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

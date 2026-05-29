@@ -1,0 +1,10 @@
+name: Glance
+description: Glance is a beautiful, highly-customizable self-hosted home dashboard that consolidates RSS feeds, system metrics, calendars, weather forecasts, and quick links in one place.
+category: dashboards
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glance.png
+warnings:
+  - Requires setting up a 'glance.yml' configuration file in the glance-data volume for the dashboard to display custom widgets.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

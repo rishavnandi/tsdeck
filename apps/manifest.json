@@ -1,0 +1,940 @@
+[
+  {
+    "id": "actual-budget",
+    "name": "Actual Budget",
+    "description": "Actual Budget is a privacy-first, self-hosted personal finance manager and budgeting tool that uses a zero-based budgeting system. It offers multi-device synchronization, bank syncing capabilities, and secure local-first data storage.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/actual-budget.png"
+  },
+  {
+    "id": "adguardhome",
+    "name": "Adguardhome",
+    "description": "AdGuard Home is a network-wide software utility for blocking ads and tracking, acting as a DNS server that redirects tracking domains to a black hole. It provides comprehensive control over all devices on your local network without requiring client-side configuration.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png"
+  },
+  {
+    "id": "adguardhome-sync",
+    "name": "AdGuard Home Sync",
+    "description": "AdGuard Home Sync is a lightweight synchronization tool that replicates configuration, filters, client settings, and query logs across multiple AdGuard Home instances.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home-sync.png"
+  },
+  {
+    "id": "affine",
+    "name": "Affine",
+    "description": "AFFiNE is a next-generation collaborative knowledge base and workspace that merges note-taking, document editing, and whiteboarding into a single, unified local-first tool.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/affine.png"
+  },
+  {
+    "id": "anchor",
+    "name": "Anchor",
+    "description": "Anchor is an offline-first note-taking application designed for speed, privacy, and seamless synchronization across web and mobile devices.",
+    "category": "bookmarks",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/anchor.png"
+  },
+  {
+    "id": "arcane",
+    "name": "Arcane",
+    "description": "Arcane is an open-source, self-hosted Docker container and Compose stack manager featuring a modern web interface to control containers, images, volumes, and networks.",
+    "category": "remote-access",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/arcane.png"
+  },
+  {
+    "id": "audiobookshelf",
+    "name": "Audiobookshelf",
+    "description": "Audiobookshelf is a self-hosted media server designed specifically for audiobooks and podcasts. It features multi-user support, playback state syncing across devices, active author/narrator metadata scraping, and a built-in podcast host.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/audiobookshelf.png"
+  },
+  {
+    "id": "bazarr",
+    "name": "Bazarr",
+    "description": "Bazarr is a companion application to Sonarr and Radarr that automates the downloading and management of subtitles in multiple languages. It scans your media libraries, fetches matching subtitles from various providers, and saves them directly alongside your video files.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/bazarr.png"
+  },
+  {
+    "id": "bentopdf",
+    "name": "BentoPDF",
+    "description": "BentoPDF is an open-source, self-hosted web application for viewing, organizing, and managing your PDF documents in a clean and minimal interface.",
+    "category": "utilities",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/bentopdf.png"
+  },
+  {
+    "id": "beszel",
+    "name": "Beszel",
+    "description": "Beszel is a lightweight, self-hosted server resource monitoring hub and agent that provides real-time CPU, memory, disk, network, and GPU utilization metrics with historical charts and alerts.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/beszel.png"
+  },
+  {
+    "id": "blinko",
+    "name": "Blinko",
+    "description": "Blinko is an open-source, self-hosted personal note-taking tool designed for quick capture and organization. It allows you to rapidly log thoughts, links, and snippets with absolute privacy, complete with full markdown support and simple search capabilities.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/note-mark.png"
+  },
+  {
+    "id": "bookbounty",
+    "name": "BookBounty",
+    "description": "BookBounty is a self-hosted e-book downloader, automatic searcher, and sync companion for Readarr. It allows you to automatically query and scrape books from diverse providers and feeds them straight to your library.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png"
+  },
+  {
+    "id": "booklore",
+    "name": "Booklore",
+    "description": "Booklore is a self-hosted book collection tracker and reading progress manager. It allows you to organize your digital library, log reading sessions, and visualize your reading habits with detailed statistics and goals.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png"
+  },
+  {
+    "id": "caddy",
+    "name": "Caddy",
+    "description": "Caddy is a powerful, enterprise-grade open-source web server with automatic HTTPS, reverse proxy capabilities, and a robust plugin ecosystem.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/caddy.png"
+  },
+  {
+    "id": "changedetection",
+    "name": "Changedetection",
+    "description": "Changedetection is a self-hosted website monitoring tool that detects visual and structural changes in web pages. It features configurable scheduling, detailed diff visualizations, and comprehensive notification integrations.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/changedetection.png"
+  },
+  {
+    "id": "clipcascade",
+    "name": "ClipCascade",
+    "description": "ClipCascade is a self-hosted, open-source clipboard manager that synchronizes and organizes your clipboard history securely across all your devices.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png"
+  },
+  {
+    "id": "code-server",
+    "name": "Code-server",
+    "description": "Code-server is VS Code running on a remote server, accessible directly through any web browser, enabling you to code on any device with a consistent development environment.",
+    "category": "development",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png"
+  },
+  {
+    "id": "coder",
+    "name": "Coder",
+    "description": "Coder is an open-source platform that provisions self-hosted developer workspaces on your own infrastructure. It automates workspace creation via Terraform, allowing developers to code securely from anywhere using their preferred IDEs.",
+    "category": "development",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/coder.png"
+  },
+  {
+    "id": "configarr",
+    "name": "Configarr",
+    "description": "Configarr is a declarative configuration management tool designed to manage and synchronize settings for Sonarr and Radarr using YAML files.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/configarr.png"
+  },
+  {
+    "id": "convertx",
+    "name": "ConvertX",
+    "description": "ConvertX is a self-hosted, user-friendly media conversion tool designed to convert and optimize media files using hardware acceleration.",
+    "category": "utilities",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/convertx.png"
+  },
+  {
+    "id": "copyparty",
+    "name": "Copyparty",
+    "description": "Copyparty is a fast and lightweight self-hosted file server supporting drag-and-drop uploads, media streaming, WebDAV, directory browsing, and user authentication.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/copyparty.png"
+  },
+  {
+    "id": "cyberchef",
+    "name": "Cyberchef",
+    "description": "CyberChef is an intuitive web app for carrying out all manner of 'cyber' operations within a web browser, including encoding, encryption, compression, and data analysis. Known as the 'Cyber Swiss Army Knife', it allows you to build complex pipelines to manipulate data easily.",
+    "category": "utilities",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cyberchef.png"
+  },
+  {
+    "id": "dashdot",
+    "name": "Dashdot",
+    "description": "Dashdot is a modern, highly customizable, and glassmorphic system monitoring dashboard designed for homelabs. It visualizes real-time OS, CPU, storage, RAM, and network statistics using a beautiful interface.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png"
+  },
+  {
+    "id": "ddns-updater",
+    "name": "DDNS Updater",
+    "description": "DDNS Updater is a lightweight, universal daemon to update dynamic DNS A and/or AAAA records periodically for multiple DNS providers, featuring a web UI.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ddns-updater.png"
+  },
+  {
+    "id": "dockhand",
+    "name": "Dockhand",
+    "description": "Dockhand is a modern, lightweight Docker management UI focused on real-time container operations, live logs, and simple Docker Compose stack orchestration.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockhand.png"
+  },
+  {
+    "id": "docmost",
+    "name": "Docmost",
+    "description": "Docmost is an open-source, collaborative wiki and documentation software designed for teams. It features real-time collaborative editing, hierarchical page organization, a rich-text block editor, and granular permissions management.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/docmost.png"
+  },
+  {
+    "id": "donetick",
+    "name": "Donetick",
+    "description": "Donetick is a simple, lightweight, self-hosted task and checklist manager designed to organize tasks efficiently while keeping your data fully private.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/donetick.png"
+  },
+  {
+    "id": "dozzle",
+    "name": "Dozzle",
+    "description": "Dozzle is a lightweight, simple web-based application that provides real-time log viewing for Docker containers. It runs in the background, monitors all active containers on your host, and streams their logs directly to a modern, searchable web interface.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png"
+  },
+  {
+    "id": "dumbdo",
+    "name": "DumbDo",
+    "description": "DumbDo is a self-hosted, minimalistic, and distraction-free task management tool designed to keep your to-do lists simple and incredibly fast.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/todoist.png"
+  },
+  {
+    "id": "duplicati",
+    "name": "Duplicati",
+    "description": "Duplicati is a free, open-source backup client that securely stores encrypted, incremental, compressed backups on local storage, cloud storage services, and remote file servers.",
+    "category": "backup",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/duplicati.png"
+  },
+  {
+    "id": "eigenfocus",
+    "name": "Eigenfocus",
+    "description": "Eigenfocus is a self-hosted, privacy-focused task and project management tool that helps individuals and teams stay organized with structured, minimalist workflows.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/camera-ui.png"
+  },
+  {
+    "id": "excalidraw",
+    "name": "Excalidraw",
+    "description": "Excalidraw is a virtual collaborative whiteboard tool for sketching hand-drawn-like diagrams. It provides a simple, highly responsive canvas supporting real-time collaboration, shape styling, and secure local file exporting.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/excalidraw.png"
+  },
+  {
+    "id": "filebrowser",
+    "name": "File Browser",
+    "description": "File Browser is a lightweight, self-hosted web-based file manager that provides a clean interface for managing, uploading, downloading, and sharing files on your server. It features custom user accounts with varying permissions, text/image editors, and shell execution capabilities.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png"
+  },
+  {
+    "id": "flaresolverr",
+    "name": "Flaresolverr",
+    "description": "FlareSolverr is a proxy server designed to bypass Cloudflare and DDoS-Guard protection mechanisms for scraping web content. It runs a headless browser instance in the background to solve Javascript challenges and return the raw HTML of target sites.",
+    "category": "downloads",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flaresolverr.png"
+  },
+  {
+    "id": "flatnotes",
+    "name": "Flatnotes",
+    "description": "Flatnotes is a self-hosted, minimalist note-taking web application that saves your notes directly as Markdown files, offering full-text search and a clean editor.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flatnotes.png"
+  },
+  {
+    "id": "forgejo",
+    "name": "Forgejo",
+    "description": "Forgejo is a self-hosted, lightweight software development platform for hosting Git repositories. Forked from Gitea, it includes source code hosting, code review, issues, pull requests, package registries, and integrated CI/CD actions.",
+    "category": "development",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/forgejo.png"
+  },
+  {
+    "id": "formbricks",
+    "name": "Formbricks",
+    "description": "Formbricks is a privacy-first, open-source survey and feedback management suite. It allows product and marketing teams to easily create in-app, link, and email surveys to capture user insights without vendor lock-in.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/formbricks.png"
+  },
+  {
+    "id": "fossflow",
+    "name": "FossFLOW",
+    "description": "FossFLOW is an open-source, self-hosted, lightweight flowchart and diagram creation tool built with privacy and simplicity in mind.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/diagrams-net.png"
+  },
+  {
+    "id": "frigate",
+    "name": "Frigate",
+    "description": "Frigate is an open-source, local NVR (Network Video Recorder) with real-time AI object detection. It is designed to run locally, processing camera streams in real-time to detect people, vehicles, and other custom objects with minimal latency.",
+    "category": "automation",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/frigate.png"
+  },
+  {
+    "id": "ghost",
+    "name": "Ghost",
+    "description": "Ghost is a powerful self-hosted publishing platform and content management system designed for professional creators, bloggers, and journalists. It features a rich editor, robust member subscription/newsletter management, and native search engine optimization.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ghost.png"
+  },
+  {
+    "id": "gitea",
+    "name": "Gitea",
+    "description": "Gitea is a painless, self-hosted Git service that is extremely fast, lightweight, and easy to deploy. It provides comprehensive collaborative features including repository management, issue tracking, pull requests, and built-in package registries.",
+    "category": "development",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gitea.png"
+  },
+  {
+    "id": "gitsave",
+    "name": "GitSave",
+    "description": "GitSave is an open-source, self-hosted developer tool designed to securely back up Git repositories from various platforms (GitHub, GitLab, Gitea) to local folders or remote destinations.",
+    "category": "development",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/git.png"
+  },
+  {
+    "id": "glance",
+    "name": "Glance",
+    "description": "Glance is a beautiful, highly-customizable self-hosted home dashboard that consolidates RSS feeds, system metrics, calendars, weather forecasts, and quick links in one place.",
+    "category": "dashboards",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glance.png"
+  },
+  {
+    "id": "gokapi",
+    "name": "Gokapi",
+    "description": "Gokapi is a lightweight, secure self-hosted file-sharing service. It allows users to upload files and generate shareable download links that automatically expire after a set time or download limit.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png"
+  },
+  {
+    "id": "gotify",
+    "name": "Gotify",
+    "description": "Gotify is a simple, lightweight self-hosted notification server that allows you to send and receive push messages in real-time via WebSockets or a REST API.",
+    "category": "communication",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png"
+  },
+  {
+    "id": "grampsweb",
+    "name": "Gramps Web",
+    "description": "Gramps Web is a collaborative, self-hosted web application for genealogy. It allows multiple users to view, edit, and collaborate on a shared family tree using a responsive and modern web interface.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gramps-web.png"
+  },
+  {
+    "id": "guacamole",
+    "name": "Guacamole",
+    "description": "Apache Guacamole is a clientless remote desktop gateway that supports standard protocols like VNC, RDP, and SSH, allowing you to access your desktops and servers from anywhere using a web browser.",
+    "category": "remote-access",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png"
+  },
+  {
+    "id": "haptic",
+    "name": "Haptic",
+    "description": "Haptic is a modern, responsive, self-hosted web music player client designed to stream from Subsonic-compatible music servers like Navidrome, Airsonic, or Gonic.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/haptic.png"
+  },
+  {
+    "id": "heimdall",
+    "name": "Heimdall",
+    "description": "Heimdall is an elegant and lightweight application dashboard that allows you to easily organize and access all your self-hosted services and bookmarks in one place.",
+    "category": "dashboards",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/heimdall.png"
+  },
+  {
+    "id": "hemmelig",
+    "name": "Hemmelig",
+    "description": "Hemmelig is a self-hosted secure secret sharing web application that allows users to encrypt and transmit sensitive data (passwords, notes, keys) that automatically self-destruct once read.",
+    "category": "security",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hemmelig.png"
+  },
+  {
+    "id": "hoarder",
+    "name": "Hoarder",
+    "description": "Hoarder is a self-hosted bookmarking application designed for saving and organizing links, articles, PDF files, and custom notes. It features a modern interface, auto-tagging using local/external AI models, full-text search, and automated page archiving/screenshot capture using headless Chrome.",
+    "category": "bookmarks",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hoarder.png"
+  },
+  {
+    "id": "homarr",
+    "name": "Homarr",
+    "description": "Homarr is a sleek, modern self-hosted application dashboard designed to organize and manage your entire homelab or self-hosted stack in a beautifully customizable single portal.",
+    "category": "dashboards",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homarr.png"
+  },
+  {
+    "id": "home-assistant",
+    "name": "Home Assistant",
+    "description": "Home Assistant is a robust self-hosted home automation platform that prioritizes local control and privacy. It acts as a central hub that integrates tens of thousands of smart home devices, allowing you to create complex automations and custom dashboards.",
+    "category": "automation",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png"
+  },
+  {
+    "id": "homebox",
+    "name": "Homebox",
+    "description": "Homebox is a lightweight, self-hosted inventory and asset management system designed for tracking household items. It allows you to organize physical belongings, document warranties, track serial numbers, and manage locations through a clean, intuitive web interface.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homebox.png"
+  },
+  {
+    "id": "homepage",
+    "name": "Homepage",
+    "description": "Homepage is a highly customizable, modern, and aesthetically pleasing application dashboard and start page that integrates with Docker and various self-hosted services. It provides real-time service status, system resource monitoring, and direct widgets for popular home lab tools.",
+    "category": "dashboards",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png"
+  },
+  {
+    "id": "hytale",
+    "name": "Hytale Server",
+    "description": "Hytale Server is a self-hosted server deployment for the upcoming sandbox adventure game Hytale, allowing players to host their own custom servers and multiplayer games.",
+    "category": "gaming",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hytale.png"
+  },
+  {
+    "id": "immich",
+    "name": "Immich",
+    "description": "Immich is a high-performance, self-hosted photo and video backup and management solution. It features AI-powered facial recognition, object detection, automatic backups via mobile apps, and metadata search, acting as a complete alternative to Google Photos.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png"
+  },
+  {
+    "id": "isley",
+    "name": "Isley",
+    "description": "Isley is an open-source, self-hosted web-based comic reader and media library organizer designed for digital comic enthusiasts.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/booklore.png"
+  },
+  {
+    "id": "it-tools",
+    "name": "It Tools",
+    "description": "IT Tools is a comprehensive collection of handy, web-based utilities and tools curated specifically for developers and IT professionals. It features a wide variety of tools including encoders/decoders, formatters, generators, and converters in a highly responsive user interface.",
+    "category": "utilities",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/it-tools.png"
+  },
+  {
+    "id": "jellyfin",
+    "name": "Jellyfin",
+    "description": "Jellyfin is a free, open-source, self-hosted media system that lets you stream and manage your movies, TV shows, music, and photos. It offers full privacy control with no tracking, no premium subscription model, and has apps across major platforms.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png"
+  },
+  {
+    "id": "jellyseerr",
+    "name": "Jellyseerr",
+    "description": "Jellyseerr is a self-hosted request management and media discovery tool designed for Jellyfin and Emby media servers. It integrates with Sonarr and Radarr to automate TV show and movie downloads, providing a clean dashboard for users to request content.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyseerr.png"
+  },
+  {
+    "id": "kaneo",
+    "name": "Kaneo",
+    "description": "Kaneo is a sleek, modern self-hosted Kanban project management platform that helps teams visualize workflows, track tasks, and collaborate without third-party vendor dependencies.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/taskcafe.png"
+  },
+  {
+    "id": "karakeep",
+    "name": "Karakeep",
+    "description": "Karakeep is a modern, self-hosted bookmarking and read-it-later application featuring full-text search, automated page archival, screenshot capturing, and AI-assisted search integrations.",
+    "category": "bookmarks",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/karakeep.png"
+  },
+  {
+    "id": "kavita",
+    "name": "Kavita",
+    "description": "Kavita is a fast, feature-rich, and cross-platform digital library server designed for manga, community comics, and books. It provides a built-in interactive web reader, rich metadata scanning, user management, and supports a wide variety of document and image archive formats.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kavita.png"
+  },
+  {
+    "id": "komodo",
+    "name": "Komodo",
+    "description": "Komodo is a lightning-fast, self-hosted container management and deployment tool that lets you manage Docker containers, stacks, and deployments across multiple servers.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/komodo.png"
+  },
+  {
+    "id": "kopia",
+    "name": "Kopia",
+    "description": "Kopia is a fast, secure, open-source backup tool that creates encrypted, deduplicated, and compressed snapshots of your files and directories to various cloud and local storage locations.",
+    "category": "backup",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kopia.png"
+  },
+  {
+    "id": "languagetool",
+    "name": "LanguageTool",
+    "description": "LanguageTool is an open-source grammar, style, and spell checker that helps users write clean, professional text across multiple languages with complete privacy.",
+    "category": "ai",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/libretranslate.png"
+  },
+  {
+    "id": "librum",
+    "name": "Librum",
+    "description": "Librum is a self-hosted server for the Librum e-book reader client. It manages all your books, synchronization data, reader preferences, and reading progress across all of your personal devices.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/librum.png"
+  },
+  {
+    "id": "linkding",
+    "name": "Linkding",
+    "description": "Linkding is a minimalist, fast, and self-hosted bookmark manager designed to be clean, fast, and easy to set up. It features tag-based organization, automatic title and description metadata retrieval, a built-in search engine, and integration extensions for popular browsers.",
+    "category": "bookmarks",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkding.png"
+  },
+  {
+    "id": "lube-logger",
+    "name": "LubeLogger",
+    "description": "LubeLogger is a self-hosted vehicle management platform that tracks fuel efficiency, maintenance history, parts replacement, and overall vehicle expenses.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lubelogger.png"
+  },
+  {
+    "id": "mattermost",
+    "name": "Mattermost",
+    "description": "Mattermost is a secure, self-hosted collaboration and messaging platform designed for technical and operational teams that serves as an alternative to Slack.",
+    "category": "communication",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mattermost.png"
+  },
+  {
+    "id": "mealie",
+    "name": "Mealie",
+    "description": "Mealie is a fully-featured, self-hosted recipe manager and meal planner with a beautiful user interface. It allows you to easily import recipes from websites by URL, customize meal plans, generate shopping lists, and share recipes with family members.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mealie.png"
+  },
+  {
+    "id": "memos",
+    "name": "Memos",
+    "description": "Memos is an open-source, self-hosted memo hub and note-taking application designed to capture thoughts, tasks, and bookmarks instantly. It supports markdown formatting, tags, sharing, and provides a lightweight, clean social-network-style feed of your personal notes.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png"
+  },
+  {
+    "id": "metube",
+    "name": "Metube",
+    "description": "MeTube is a web-based GUI wrapper for yt-dlp, allowing you to easily download videos and audio from YouTube and dozens of other websites. It features a simple queue system, custom download directory mapping, and supports downloading playlists, channels, or individual videos.",
+    "category": "downloads",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/metube.png"
+  },
+  {
+    "id": "minecraft",
+    "name": "Minecraft Server",
+    "description": "Minecraft Server is a self-hosted server for the popular sandbox game, allowing players to connect and build together in a private multiplayer world.",
+    "category": "gaming",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/minecraft.png"
+  },
+  {
+    "id": "miniflux",
+    "name": "Miniflux",
+    "description": "Miniflux is a minimalist, open-source, and fast self-hosted RSS reader designed to be simple, efficient, and clean.",
+    "category": "bookmarks",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/miniflux.png"
+  },
+  {
+    "id": "miniqr",
+    "name": "MiniQR",
+    "description": "MiniQR is a lightweight, clean self-hosted QR code generator that helps users quickly create customizable QR codes with complete privacy.",
+    "category": "utilities",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png"
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "description": "n8n is an extendable workflow automation tool that enables you to connect various APIs, databases, and SaaS tools without writing code. It features a powerful node-based visual designer, robust error-handling, and self-hostable execution for secure data integrations.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/n8n.png"
+  },
+  {
+    "id": "nanote",
+    "name": "Nanote",
+    "description": "Nanote is an ultra-minimalistic, distraction-free, self-hosted note-taking app that prioritizes markdown editing, speed, and privacy.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flatnotes.png"
+  },
+  {
+    "id": "navidrome",
+    "name": "Navidrome",
+    "description": "Navidrome is a modern, lightweight, and highly efficient self-hosted music server and streamer that is compatible with Subsonic and Airsonic clients. It allows you to access and stream your personal music collection from any device, with support for major audio formats, transcoding, and rich metadata scanning.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/navidrome.png"
+  },
+  {
+    "id": "nessus",
+    "name": "Nessus",
+    "description": "Nessus is a comprehensive, self-hosted vulnerability scanner that provides deep network assessments, configuration audits, and security analysis.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tenable.png"
+  },
+  {
+    "id": "netbox",
+    "name": "NetBox",
+    "description": "NetBox is a premium, open-source infrastructure resource management (IRM) platform that combines IP address management (IPAM) and data center infrastructure management (DCIM) tools.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/netbox.png"
+  },
+  {
+    "id": "next-explorer",
+    "name": "Next Explorer",
+    "description": "Next Explorer is a web-based, modern, and beautiful file manager that allows you to easily browse, manage, and share files from your host system with Tailscale users.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextexplorer.png"
+  },
+  {
+    "id": "nextcloud",
+    "name": "Nextcloud",
+    "description": "Nextcloud is a comprehensive self-hosted productivity platform that serves as a secure alternative to commercial cloud storage. It offers file sharing, collaborative document editing, calendars, contacts, and email clients, all fully integrated and hosted on your private server.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png"
+  },
+  {
+    "id": "nodered",
+    "name": "Nodered",
+    "description": "Node-RED is a powerful flow-based programming tool for wiring together hardware devices, APIs, and online services. It provides a browser-based flow editor that makes it easy to integrate smart home devices and design complex automation logic using a wide range of pre-built nodes.",
+    "category": "automation",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/node-red.png"
+  },
+  {
+    "id": "ntfy",
+    "name": "Ntfy",
+    "description": "Ntfy is a simple, HTTP-based publish-subscribe notification service that allows you to send push notifications to your phone or desktop via scripts, curl requests, or custom webhooks. It is highly lightweight, privacy-focused, and has native apps for Android and iOS.",
+    "category": "communication",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ntfy.png"
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "description": "Ollama is a lightweight, extensible framework for building and running large language models (LLMs) locally on your own hardware. It allows you to easily download, run, and interact with open-source models like Llama, Mistral, and Gemma via a robust local API.",
+    "category": "ai",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama.png"
+  },
+  {
+    "id": "open-webui",
+    "name": "Open Webui",
+    "description": "Open WebUI is a user-friendly, feature-rich self-hosted web interface designed for local large language models. It integrates seamlessly with Ollama and OpenAI-compatible APIs, offering support for multi-modal interactions, retrieval-augmented generation (RAG), and agent creation.",
+    "category": "ai",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/open-webui.png"
+  },
+  {
+    "id": "paperless",
+    "name": "Paperless",
+    "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable digital archive. It features OCR powered by Tesseract, automated tagging and classification, full-text search, and multi-user support.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/paperless-ngx.png"
+  },
+  {
+    "id": "picard",
+    "name": "MusicBrainz Picard",
+    "description": "MusicBrainz Picard is a cross-platform music tagger written in Python that helps organize your digital music collection by identifying and writing audio tags.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/musicbrainz-picard.png"
+  },
+  {
+    "id": "pihole",
+    "name": "Pihole",
+    "description": "Pi-hole is a network-wide ad blocker that acts as a private DNS server to intercept and block ads and tracking domains for all devices on your local network.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png"
+  },
+  {
+    "id": "pingvin-share",
+    "name": "Pingvin Share",
+    "description": "Pingvin Share is a self-hosted file sharing platform that allows you to easily upload and share files with customizable link expiration times, password protection, and download limits.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pingvin-share.png"
+  },
+  {
+    "id": "plex",
+    "name": "Plex",
+    "description": "Plex is a powerful media server platform that organizes your personal video, music, and photo libraries, streaming them seamlessly to any device with rich metadata.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/plex.png"
+  },
+  {
+    "id": "pocket-id",
+    "name": "Pocket ID",
+    "description": "Pocket ID is a simple, lightweight self-hosted OIDC/OAuth2 identity provider that allows you to easily manage users and authenticate services across your homelab.",
+    "category": "security",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pocket-id.png"
+  },
+  {
+    "id": "portainer",
+    "name": "Portainer",
+    "description": "Portainer is a lightweight, web-based container management interface that simplifies the deployment, monitoring, and administration of Docker containers, volumes, and networks.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png"
+  },
+  {
+    "id": "portracker",
+    "name": "Portracker",
+    "description": "Portracker is a modern, simple self-hosted dashboard that tracks active open ports and network socket usage across your host system and running containers.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portracker.png"
+  },
+  {
+    "id": "posterizarr",
+    "name": "Posterizarr",
+    "description": "Posterizarr is an automated utility that generates customized overlay posters for Plex, Emby, or Jellyfin media libraries based on user configuration.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/posterizarr.png"
+  },
+  {
+    "id": "prowlarr",
+    "name": "Prowlarr",
+    "description": "Prowlarr is an indexer manager and proxy built on the popular Arr .NET stack, integrating seamlessly with your download clients and automation tools to track torrent and Usenet indexers.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/prowlarr.png"
+  },
+  {
+    "id": "qbittorrent",
+    "name": "qBittorrent",
+    "description": "qBittorrent is a lightweight, open-source BitTorrent client with a built-in web UI, support for search plugins, sequential downloading, and detailed torrent creation controls.",
+    "category": "downloads",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png"
+  },
+  {
+    "id": "radarr",
+    "name": "Radarr",
+    "description": "Radarr is a movie collection manager and PVR that automates the downloading of films via torrents and Usenet, organizing your library and matching high-quality metadata.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/radarr.png"
+  },
+  {
+    "id": "readarr",
+    "name": "Readarr",
+    "description": "Readarr is an ebook and audiobook collection manager for Usenet and BitTorrent users. It monitors multiple RSS feeds for new books and integrates with download clients and indexers to fully automate downloading, parsing, and renaming.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/readarr.png"
+  },
+  {
+    "id": "recyclarr",
+    "name": "Recyclarr",
+    "description": "Recyclarr is a CLI tool that automates the synchronization of recommended TRaSH Guides configurations, quality profiles, and custom formats to your Sonarr and Radarr instances.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/recyclarr.png"
+  },
+  {
+    "id": "requestrr",
+    "name": "Requestrr",
+    "description": "Requestrr is a chatbot used to simplify writing and executing commands in Discord for requesting content from services like Sonarr, Radarr, and Jellyseerr. It features seamless automated requests, downloads, and interactive user confirmations directly via Discord.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/requestrr.png"
+  },
+  {
+    "id": "resilio-sync",
+    "name": "Resilio Sync",
+    "description": "Resilio Sync is a fast, peer-to-peer file synchronization tool that uses the BitTorrent protocol to securely transfer files between devices without cloud storage.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/resiliosync.png"
+  },
+  {
+    "id": "rustdesk-server",
+    "name": "RustDesk Server",
+    "description": "RustDesk Server is a self-hosted remote desktop software solution that provides full control of your data with no configuration required. It acts as both an ID/rendezvous server and a relay server, enabling secure and fast connections between your devices.",
+    "category": "remote-access",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/rustdesk.png"
+  },
+  {
+    "id": "scrutiny",
+    "name": "Scrutiny",
+    "description": "Scrutiny is a hard drive S.M.A.R.T. monitoring dashboard and historical database that tracks disk health and health check history across all your storage drives.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/scrutiny.png"
+  },
+  {
+    "id": "searxng",
+    "name": "SearXNG",
+    "description": "SearXNG is a privacy-respecting, hackable metasearch engine that aggregates results from dozens of search engines without tracking or profiling you.",
+    "category": "ai",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/searxng.png"
+  },
+  {
+    "id": "seerr",
+    "name": "Seerr",
+    "description": "Seerr is a request management and media discovery tool for the Plex ecosystem, allowing users to browse, discover, and request content with automated delivery integration.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/overseerr.png"
+  },
+  {
+    "id": "slink",
+    "name": "Slink",
+    "description": "Slink is a fast, self-hosted file and image sharing platform built with Symfony and SvelteKit. It offers full control over your media, featuring private link sharing, password protection, and direct integration with tools like ShareX.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/slink.png"
+  },
+  {
+    "id": "sonarr",
+    "name": "Sonarr",
+    "description": "Sonarr is a TV series collection manager and PVR that automates the downloading of episodes via torrents and Usenet, organizing your library and tracking missing episodes.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/sonarr.png"
+  },
+  {
+    "id": "speedtest-tracker",
+    "name": "Speedtest Tracker",
+    "description": "Speedtest Tracker is a self-hosted application that automatically runs periodic internet speed tests and visualizes the results over time with detailed charts and history.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/speedtest-tracker.png"
+  },
+  {
+    "id": "stirlingpdf",
+    "name": "Stirlingpdf",
+    "description": "Stirling PDF is a robust, self-hosted web-based PDF manipulation tool that allows you to merge, split, compress, convert, and secure PDF files entirely offline.",
+    "category": "utilities",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/stirling-pdf.png"
+  },
+  {
+    "id": "stump",
+    "name": "Stump",
+    "description": "Stump is a fast, free, and open-source comic book server. It is built to serve digital comic libraries, ePUB books, and PDF files, featuring responsive web readers, robust library organization, and OPDS server support.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/stump.png"
+  },
+  {
+    "id": "subtrackr",
+    "name": "Subtrackr",
+    "description": "Subtrackr is a modern, self-hosted personal subscription tracking application that helps you monitor recurring expenses, upcoming renewals, and payment methods. It features a clean dashboard to visualize and organize all your subscriptions in a secure, local-first database.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/google-finance.png"
+  },
+  {
+    "id": "swingmx",
+    "name": "Swing Music",
+    "description": "Swing Music is a beautifully designed, self-hosted music streaming server that indexes your local audio files and serves them via a modern web interface. Paired with TSDProxy, you can securely access your personal music library from any of your devices on your Tailnet.",
+    "category": "media",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/swingmusic.png"
+  },
+  {
+    "id": "syncthing",
+    "name": "Syncthing",
+    "description": "Syncthing is a continuous, peer-to-peer decentralized file synchronization application. It replaces proprietary cloud sync and storage services with a secure, private, and encrypted direct file exchange.",
+    "category": "files",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png"
+  },
+  {
+    "id": "tailscale-app-connector-node",
+    "name": "Tailscale App Connector Node",
+    "description": "Tailscale App Connector Node is an infrastructure component that routes traffic to third-party SaaS applications through your local network. It allows you to enforce secure, identity-aware access controls on public SaaS resources by anchoring their traffic to a trusted node.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png"
+  },
+  {
+    "id": "tailscale-exit-node",
+    "name": "Tailscale Exit Node",
+    "description": "Tailscale Exit Node enables you to route all of your public internet traffic through a specific device on your Tailnet. This allows you to securely access the web when using untrusted networks (like public Wi-Fi) by routing and encrypting your traffic through your home or office connection.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png"
+  },
+  {
+    "id": "tailscale-subnet-router-node",
+    "name": "Tailscale Subnet Router Node",
+    "description": "Tailscale Subnet Router Node securely connects your entire physical local network to your Tailnet. It allows devices on your Tailnet to access resources in specified local subnets without needing to install Tailscale client software on each individual local device.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png"
+  },
+  {
+    "id": "tandoor",
+    "name": "Tandoor Recipes",
+    "description": "Tandoor Recipes is an open-source, self-hosted recipe manager and meal planner that lets you organize recipes, plan weekly meals, and auto-generate shopping lists. It provides a highly functional, ad-free platform to manage your culinary lifestyle in total privacy.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tandoor-recipes.png"
+  },
+  {
+    "id": "tautulli",
+    "name": "Tautulli",
+    "description": "Tautulli is a monitoring and tracking web application for Plex Media Server that provides detailed playback statistics, watch history, and user activity insights.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tautulli.png"
+  },
+  {
+    "id": "technitium",
+    "name": "Technitium DNS Server",
+    "description": "Technitium DNS Server is an open-source self-hosted DNS server that can be used for self-hosting a local DNS server for privacy and security. It features a powerful web console with support for DNS-over-HTTPS, DNS-over-TLS, blocklists, and advanced caching.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/technitium.png"
+  },
+  {
+    "id": "tinyauth",
+    "name": "TinyAuth",
+    "description": "TinyAuth is a lightweight forward authentication portal that integrates with reverse proxies like Traefik to provide simple, secure authentication for your self-hosted apps.",
+    "category": "security",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tinyauth.png"
+  },
+  {
+    "id": "tracktor",
+    "name": "Tracktor",
+    "description": "Tracktor is an open-source, self-hosted vehicle management application built on SvelteKit and SQLite. It provides a simple, modern interface to track fuel consumption, vehicle maintenance logs, insurance details, and essential regulatory documents.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/transmission.png"
+  },
+  {
+    "id": "traefik",
+    "name": "Traefik",
+    "description": "Traefik is a modern HTTP reverse proxy and load balancer designed to deploy microservices with ease. It automatically discovers configurations from your Docker containers and manages routes, entrypoints, and SSL certificates dynamically.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traefik.png"
+  },
+  {
+    "id": "transmute",
+    "name": "Transmute",
+    "description": "Transmute is an open-source, self-hosted file conversion platform that supports converting images, video, audio, documents, and fonts locally. It prioritizes complete privacy and features an integrated REST API for seamless automation across your services.",
+    "category": "downloads",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png"
+  },
+  {
+    "id": "unmanic",
+    "name": "Unmanic",
+    "description": "Unmanic is a simple post-processor for your media library. It monitors your library directories for new video files and automatically transcodes them using templates to optimize formats, remove unwanted audio/subtitle streams, and reduce overall library storage footprint.",
+    "category": "media-management",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/unmanic.png"
+  },
+  {
+    "id": "uptime-kuma",
+    "name": "Uptime Kuma",
+    "description": "Uptime Kuma is a self-hosted monitoring tool that tracks the availability of websites, services, and containers in real-time, providing multi-channel alerts and customizable status pages.",
+    "category": "monitoring",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png"
+  },
+  {
+    "id": "vaultwarden",
+    "name": "Vaultwarden",
+    "description": "Vaultwarden is an alternative, lightweight implementation of the Bitwarden secrets manager written in Rust, designed for self-hosting with minimal system resource consumption.",
+    "category": "security",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vaultwarden.png"
+  },
+  {
+    "id": "vikunja",
+    "name": "Vikunja",
+    "description": "Vikunja is a feature-rich, self-hosted todo and task management platform that allows you to organize tasks via lists, kanban boards, Gantt charts, and custom namespaces.",
+    "category": "productivity",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vikunja.png"
+  },
+  {
+    "id": "wallos",
+    "name": "Wallos",
+    "description": "Wallos is an open-source, self-hosted web application that simplifies subscription tracking and management. It provides a highly visual dashboard to track recurring payments, categorize subscriptions, monitor currency exchange rates, and view detailed spending statistics.",
+    "category": "home",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wallos.png"
+  },
+  {
+    "id": "watchtower",
+    "name": "Watchtower",
+    "description": "Watchtower is a lightweight application that automates Docker container base image updates. It monitors active containers, detects new base image versions on registries, and cleanly restarts containers with new configurations.",
+    "category": "infrastructure",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchtower.png"
+  },
+  {
+    "id": "wireguard",
+    "name": "WireGuard",
+    "description": "WireGuard (via wg-easy) is an extremely simple, fast, and modern virtual private network (VPN) client and server. It provides a secure, encrypted tunnel to your home network, managed via a user-friendly web interface.",
+    "category": "networking",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wireguard.png"
+  },
+  {
+    "id": "xwiki",
+    "name": "XWiki",
+    "description": "XWiki is an advanced, enterprise-grade open-source wiki platform that offers extensive customization, structured data handling, and app development capabilities. It enables teams to collaborate, share knowledge, and build powerful wiki-based applications in a highly scalable self-hosted environment.",
+    "category": "documents",
+    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/xwiki.png"
+  }
+]

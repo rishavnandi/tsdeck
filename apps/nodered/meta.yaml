@@ -1,0 +1,11 @@
+name: Nodered
+description: Node-RED is a powerful flow-based programming tool for wiring together hardware devices, APIs, and online services. It provides a browser-based flow editor that makes it easy to integrate smart home devices and design complex automation logic using a wide range of pre-built nodes.
+category: automation
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/node-red.png
+warnings:
+  - Ensure Docker network routing allows Node-RED to access local subnet IPs if integrating with physical local smart home devices.
+  - Node-RED allows arbitrary JavaScript execution in flow nodes; secure your Node-RED instance access carefully to prevent unauthorized control.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

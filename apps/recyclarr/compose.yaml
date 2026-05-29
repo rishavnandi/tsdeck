@@ -1,0 +1,17 @@
+services:
+  recyclarr:
+    image: ghcr.io/recyclarr/recyclarr:latest
+    container_name: recyclarr
+    environment:
+      - TZ=${TZ}
+      - RECYCLARR_CREATE_CONFIG=true
+    user: "1000:1000"
+    volumes:
+      - recyclarr-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "recyclarr"
+    restart: always
+
+volumes:
+  recyclarr-config:

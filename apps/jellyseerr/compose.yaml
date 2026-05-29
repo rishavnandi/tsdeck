@@ -1,0 +1,17 @@
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - jellyseerr-config:/app/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "jellyseerr"
+    restart: always
+
+volumes:
+  jellyseerr-config:

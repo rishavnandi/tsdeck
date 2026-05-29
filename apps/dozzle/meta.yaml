@@ -1,0 +1,7 @@
+name: Dozzle
+description: Dozzle is a lightweight, simple web-based application that provides real-time log viewing for Docker containers. It runs in the background, monitors all active containers on your host, and streams their logs directly to a modern, searchable web interface.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png
+warnings:
+  - Requires read-only access to /var/run/docker.sock, which grants Dozzle visibility into container metadata and logs across your entire Docker host.
+required_env_vars: []

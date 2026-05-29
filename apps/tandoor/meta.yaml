@@ -1,0 +1,11 @@
+name: Tandoor Recipes
+description: Tandoor Recipes is an open-source, self-hosted recipe manager and meal planner that lets you organize recipes, plan weekly meals, and auto-generate shopping lists. It provides a highly functional, ad-free platform to manage your culinary lifestyle in total privacy.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tandoor-recipes.png
+warnings:
+  - Requires a persistent database backup to prevent loss of your saved recipes and meal plans.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+

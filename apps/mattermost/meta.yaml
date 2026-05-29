@@ -1,0 +1,13 @@
+name: Mattermost
+description: Mattermost is a secure, self-hosted collaboration and messaging platform designed for technical and operational teams that serves as an alternative to Slack.
+category: communication
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mattermost.png
+warnings:
+  - Requires a companion PostgreSQL database, which is fully configured and included in this stack.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DOMAIN
+    description: Public domain or hostname of the service (e.g. mattermost.example.com)
+

@@ -1,0 +1,10 @@
+name: Anchor
+description: Anchor is an offline-first note-taking application designed for speed, privacy, and seamless synchronization across web and mobile devices.
+category: bookmarks
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/anchor.png
+warnings:
+  - Supports standard file storage; ensure note volumes are backed up to prevent data loss.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

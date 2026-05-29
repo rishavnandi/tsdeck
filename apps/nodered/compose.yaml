@@ -1,0 +1,17 @@
+services:
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - nodered-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "nodered"
+    restart: always
+
+volumes:
+  nodered-data:

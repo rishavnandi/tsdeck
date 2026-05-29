@@ -1,0 +1,19 @@
+services:
+  picard:
+    image: docker.io/mikenye/picard:latest
+    container_name: picard
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+      - TZ=${TZ}
+    volumes:
+      - picard-config:/config
+      - picard-music:/storage
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "picard"
+    restart: always
+
+volumes:
+  picard-config:
+  picard-music:

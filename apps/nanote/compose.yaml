@@ -1,0 +1,19 @@
+services:
+  nanote:
+    image: docker.io/omarmir/nanote:latest
+    container_name: nanote
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+      - NOTES_PATH=/notes
+      - SECRET_KEY=change-me-please-secret-key
+    volumes:
+      - nanote-data:/notes
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "nanote"
+    restart: always
+
+volumes:
+  nanote-data:

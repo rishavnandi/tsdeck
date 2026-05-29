@@ -1,0 +1,10 @@
+services:
+  cyberchef:
+    image: ghcr.io/gchq/cyberchef:latest
+    container_name: cyberchef
+    environment:
+      - TZ=${TZ}
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "cyberchef"
+    restart: always

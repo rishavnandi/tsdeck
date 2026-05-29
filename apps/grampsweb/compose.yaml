@@ -1,0 +1,55 @@
+services:
+  grampsweb: &grampsweb
+    image: ghcr.io/gramps-project/grampsweb:latest
+    container_name: grampsweb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - GRAMPSWEB_TREE=${GRAMPSWEB_TREE:-Gramps Web}
+      - GRAMPSWEB_CELERY_CONFIG__broker_url=redis://grampsweb-redis:6379/0
+      - GRAMPSWEB_CELERY_CONFIG__result_backend=redis://grampsweb-redis:6379/0
+      - GRAMPSWEB_RATELIMIT_STORAGE_URI=redis://grampsweb-redis:6379/1
+    volumes:
+      - grampsweb-users:/app/users
+      - grampsweb-index:/app/indexdir
+      - grampsweb-thumbs:/app/thumbnail_cache
+      - grampsweb-cache:/app/cache
+      - grampsweb-secret:/app/secret
+      - grampsweb-db:/root/.gramps/grampsdb
+      - grampsweb-media:/app/media
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "grampsweb"
+    depends_on:
+      grampsweb-redis:
+        condition: service_healthy
+    restart: always
+
+  grampsweb-worker:
+    <<: *grampsweb
+    container_name: grampsweb-worker
+    command: celery -A gramps_webapi.celery worker --loglevel=INFO --concurrency=2
+    labels: {}
+    depends_on:
+      - grampsweb-redis
+    restart: always
+
+  grampsweb-redis:
+    image: redis:7.2-alpine
+    container_name: grampsweb-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  grampsweb-users:
+  grampsweb-index:
+  grampsweb-thumbs:
+  grampsweb-cache:
+  grampsweb-secret:
+  grampsweb-db:
+  grampsweb-media:

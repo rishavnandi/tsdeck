@@ -1,0 +1,10 @@
+name: Cyberchef
+description: CyberChef is an intuitive web app for carrying out all manner of 'cyber' operations within a web browser, including encoding, encryption, compression, and data analysis. Known as the 'Cyber Swiss Army Knife', it allows you to build complex pipelines to manipulate data easily.
+category: utilities
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cyberchef.png
+warnings:
+  - CyberChef runs entirely inside the client's browser, so operations with extremely large datasets may freeze or crash your web browser tab.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

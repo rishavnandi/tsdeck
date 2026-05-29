@@ -1,0 +1,12 @@
+name: Tautulli
+description: Tautulli is a monitoring and tracking web application for Plex Media Server that provides detailed playback statistics, watch history, and user activity insights.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tautulli.png
+depends_on:
+  - plex
+warnings:
+  - Requires a running Plex media server instance and appropriate Plex credentials/API tokens to pull activity and history logs.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

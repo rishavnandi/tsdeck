@@ -1,0 +1,10 @@
+name: Scrutiny
+description: Scrutiny is a hard drive S.M.A.R.T. monitoring dashboard and historical database that tracks disk health and health check history across all your storage drives.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/scrutiny.png
+warnings:
+  - Requires the SYS_RAWIO capability and direct access to host disk devices (/dev and /run/udev) to poll S.M.A.R.T. metrics.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

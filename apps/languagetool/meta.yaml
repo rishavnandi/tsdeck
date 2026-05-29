@@ -1,0 +1,10 @@
+name: LanguageTool
+description: LanguageTool is an open-source grammar, style, and spell checker that helps users write clean, professional text across multiple languages with complete privacy.
+category: ai
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/libretranslate.png
+warnings:
+  - LanguageTool can be resource-intensive, requiring at least 1-2 GB of RAM depending on active language models.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

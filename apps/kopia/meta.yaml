@@ -1,0 +1,19 @@
+name: Kopia
+description: Kopia is a fast, secure, open-source backup tool that creates encrypted, deduplicated, and compressed snapshots of your files and directories to various cloud and local storage locations.
+category: backup
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kopia.png
+warnings:
+  - Requires a secure master repository password. Protecting this password is critical because it encrypts and decrypts all of your backups.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: KOPIA_USERNAME
+    description: Username for the Kopia server web interface
+    default: admin
+  - name: KOPIA_PASSWORD
+    description: Password for the Kopia server web interface and repository
+    default: change-me-please
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data you want to backup
+    default: /opt/tsdeck/data

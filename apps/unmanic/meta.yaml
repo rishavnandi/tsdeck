@@ -1,0 +1,14 @@
+name: Unmanic
+description: Unmanic is a simple post-processor for your media library. It monitors your library directories for new video files and automatically transcodes them using templates to optimize formats, remove unwanted audio/subtitle streams, and reduce overall library storage footprint.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/unmanic.png
+warnings:
+  - High resource utilization: Transcoding video files is highly CPU and RAM intensive. It is recommended to deploy on transcoding-capable nodes.
+  - GPU acceleration configuration is recommended for hardware-accelerated transcoding (e.g. NVIDIA NVDEC/NVENC, Intel QuickSync).
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

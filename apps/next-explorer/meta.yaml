@@ -1,0 +1,13 @@
+name: Next Explorer
+description: Next Explorer is a web-based, modern, and beautiful file manager that allows you to easily browse, manage, and share files from your host system with Tailscale users.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextexplorer.png
+warnings:
+  - Requires host directory mapping to access the local files you wish to explore.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: ACCESS_PATH
+    description: The absolute path on the host system to share/browse, e.g., /home/user/files
+

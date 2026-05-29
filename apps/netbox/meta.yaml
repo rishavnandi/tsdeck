@@ -1,0 +1,11 @@
+name: NetBox
+description: NetBox is a premium, open-source infrastructure resource management (IRM) platform that combines IP address management (IPAM) and data center infrastructure management (DCIM) tools.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/netbox.png
+warnings:
+  - NetBox requires multiple database and caching services (PostgreSQL, Valkey/Redis) which are fully orchestrated in this stack.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+

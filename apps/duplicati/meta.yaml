@@ -1,0 +1,13 @@
+name: Duplicati
+description: Duplicati is a free, open-source backup client that securely stores encrypted, incremental, compressed backups on local storage, cloud storage services, and remote file servers.
+category: backup
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/duplicati.png
+warnings:
+  - Access to the host file system should be restricted to directories containing the specific data you intend to back up.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data you want to backup
+    default: /opt/tsdeck/data

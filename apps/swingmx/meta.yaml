@@ -1,0 +1,13 @@
+name: Swing Music
+description: Swing Music is a beautifully designed, self-hosted music streaming server that indexes your local audio files and serves them via a modern web interface. Paired with TSDProxy, you can securely access your personal music library from any of your devices on your Tailnet.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/swingmusic.png
+warnings:
+  - Requires access to a local music directory on the host. Please ensure the SWINGMX_MUSIC_PATH environment variable is correctly configured to point to your music library.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: SWINGMX_MUSIC_PATH
+    description: Absolute path to your local music directory on the host
+    default: /path/to/music

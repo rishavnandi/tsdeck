@@ -1,0 +1,11 @@
+name: Coder
+description: Coder is an open-source platform that provisions self-hosted developer workspaces on your own infrastructure. It automates workspace creation via Terraform, allowing developers to code securely from anywhere using their preferred IDEs.
+category: development
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/coder.png
+warnings:
+  - Mounts the host's /var/run/docker.sock, which grants containerized workspaces full root access to the host Docker daemon.
+  - Requires a valid public HTTPS or Tailscale URL configured in CODER_ACCESS_URL for workspaces to successfully connect back to the Coder controller.
+required_env_vars:
+  - name: CODER_ACCESS_URL
+    description: External URL to access Coder (e.g. https://coder.your-tailnet.ts.net)
+    default: http://localhost:7080

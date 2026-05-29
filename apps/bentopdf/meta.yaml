@@ -1,0 +1,10 @@
+name: BentoPDF
+description: BentoPDF is an open-source, self-hosted web application for viewing, organizing, and managing your PDF documents in a clean and minimal interface.
+category: utilities
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/bentopdf.png
+warnings:
+  - Keep your document volumes securely backed up to prevent accidental data loss.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

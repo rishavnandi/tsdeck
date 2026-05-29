@@ -1,0 +1,28 @@
+name: Minecraft Server
+description: Minecraft Server is a self-hosted server for the popular sandbox game, allowing players to connect and build together in a private multiplayer world.
+category: gaming
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/minecraft.png
+warnings:
+  - Requires significant CPU and RAM (minimum 2-4 GB depending on player count and mods). Needs TCP port 25565 exposed for game client connections.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: SERVER_TYPE
+    description: Minecraft server type (VANILLA, PAPER, FABRIC, etc.)
+    default: VANILLA
+  - name: MINECRAFT_VERSION
+    description: Minecraft server version (e.g. LATEST or 1.21.4)
+    default: LATEST
+  - name: DIFFICULTY
+    description: Game difficulty level (peaceful, easy, normal, hard)
+    default: normal
+  - name: MAX_PLAYERS
+    description: Max number of concurrent players allowed
+    default: "10"
+  - name: MOTD
+    description: Message of the day shown in the server list
+    default: A Minecraft Server on Tailscale
+  - name: MEMORY
+    description: JVM memory allocation (e.g. 2G)
+    default: 2G

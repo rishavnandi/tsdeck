@@ -1,0 +1,23 @@
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - VERSION=docker
+      - PLEX_CLAIM=${PLEX_CLAIM:-}
+    volumes:
+      - plex-config:/config
+      - plex-tv:/tv
+      - plex-movies:/movies
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "plex"
+    restart: always
+
+volumes:
+  plex-config:
+  plex-tv:
+  plex-movies:

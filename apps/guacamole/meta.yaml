@@ -1,0 +1,10 @@
+name: Guacamole
+description: Apache Guacamole is a clientless remote desktop gateway that supports standard protocols like VNC, RDP, and SSH, allowing you to access your desktops and servers from anywhere using a web browser.
+category: remote-access
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png
+warnings:
+  - Secure your Guacamole instance with a strong administrator password upon first login to prevent unauthorized remote access to your internal network.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

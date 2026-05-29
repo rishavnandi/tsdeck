@@ -1,0 +1,10 @@
+name: Vikunja
+description: Vikunja is a feature-rich, self-hosted todo and task management platform that allows you to organize tasks via lists, kanban boards, Gantt charts, and custom namespaces.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vikunja.png
+warnings:
+  - Ensure database and files volumes are backed up regularly to prevent data loss of tasks, projects, and file attachments.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

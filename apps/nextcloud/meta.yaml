@@ -1,0 +1,10 @@
+name: Nextcloud
+description: Nextcloud is a comprehensive self-hosted productivity platform that serves as a secure alternative to commercial cloud storage. It offers file sharing, collaborative document editing, calendars, contacts, and email clients, all fully integrated and hosted on your private server.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+warnings:
+  - Nextcloud defaults to using SQLite which is not recommended for production. It is highly recommended to configure it to use an external relational database (like PostgreSQL or MariaDB) for better performance and reliability.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

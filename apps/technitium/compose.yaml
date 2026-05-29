@@ -1,0 +1,24 @@
+services:
+  technitium:
+    image: technitium/dns-server:latest
+    container_name: technitium
+    hostname: technitium
+    environment:
+      - TZ=${TZ}
+      - DNS_SERVER_DOMAIN=${TECHNITIUM_DNS_DOMAIN}
+      - DNS_SERVER_ADMIN_PASSWORD=${TECHNITIUM_ADMIN_PASSWORD}
+      - DNS_SERVER_RECURSION=${TECHNITIUM_DNS_RECURSION}
+      - DNS_SERVER_FORWARDERS=${TECHNITIUM_DNS_FORWARDERS}
+    volumes:
+      - technitium-config:/etc/dns
+    ports:
+      - "5380:5380/tcp"
+      - "53:53/udp"
+      - "53:53/tcp"
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "technitium"
+    restart: always
+
+volumes:
+  technitium-config:

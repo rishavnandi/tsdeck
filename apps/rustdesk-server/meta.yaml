@@ -1,0 +1,10 @@
+name: RustDesk Server
+description: RustDesk Server is a self-hosted remote desktop software solution that provides full control of your data with no configuration required. It acts as both an ID/rendezvous server and a relay server, enabling secure and fast connections between your devices.
+category: remote-access
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/rustdesk.png
+warnings:
+  - Requires multiple host ports to be opened (21115-21119) on your firewall to allow external RustDesk clients to connect.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

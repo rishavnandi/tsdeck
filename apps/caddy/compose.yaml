@@ -1,0 +1,19 @@
+services:
+  caddy:
+    image: docker.io/caddy:latest
+    container_name: caddy
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+      - caddy-srv:/srv
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "caddy"
+    restart: always
+
+volumes:
+  caddy-data:
+  caddy-config:
+  caddy-srv:

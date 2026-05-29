@@ -1,0 +1,33 @@
+services:
+  blinko:
+    image: blinkospace/blinko:latest
+    container_name: blinko
+    depends_on:
+      - blinko-db
+    environment:
+      - NODE_ENV=production
+      - NEXTAUTH_SECRET=changethisblinkoauthsecret32chars!
+      - DATABASE_URL=postgresql://postgres:changethisblinkodbpassword@blinko-db:5432/postgres
+      - TZ=${TZ}
+    volumes:
+      - blinko-data:/app/.blinko
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "blinko"
+    restart: always
+
+  blinko-db:
+    image: postgres:14
+    container_name: blinko-db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=changethisblinkodbpassword
+      - TZ=${TZ}
+    volumes:
+      - blinko-db-data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  blinko-data:
+  blinko-db-data:

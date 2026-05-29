@@ -1,0 +1,18 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - radarr-config:/config
+      - ${DATA_DIR}:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "radarr"
+    restart: always
+
+volumes:
+  radarr-config:

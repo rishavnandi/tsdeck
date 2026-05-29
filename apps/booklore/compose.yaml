@@ -1,0 +1,50 @@
+services:
+  booklore:
+    image: ghcr.io/booklore-app/booklore:latest
+    container_name: booklore
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DATABASE_URL=jdbc:mariadb://booklore-db:3306/booklore
+      - DATABASE_USERNAME=booklore
+      - DATABASE_PASSWORD=booklore_db_pass
+      - SWAGGER_ENABLED=false
+    volumes:
+      - booklore-data:/app/data
+      - booklore-books:/books1
+    depends_on:
+      booklore-db:
+        condition: service_healthy
+    restart: unless-stopped
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "booklore"
+
+  booklore-db:
+    image: lscr.io/linuxserver/mariadb:11.4.5
+    container_name: booklore-db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=booklore_root_pass
+      - MYSQL_DATABASE=booklore
+      - MYSQL_USER=booklore
+      - MYSQL_PASSWORD=booklore_db_pass
+    volumes:
+      - booklore-db-config:/config
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - mariadb-admin
+        - ping
+        - "-h"
+        - localhost
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  booklore-data:
+  booklore-books:
+  booklore-db-config:

@@ -1,0 +1,10 @@
+name: Kavita
+description: Kavita is a fast, feature-rich, and cross-platform digital library server designed for manga, community comics, and books. It provides a built-in interactive web reader, rich metadata scanning, user management, and supports a wide variety of document and image archive formats.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/kavita.png
+warnings:
+  - Library scans can be highly CPU and I/O intensive during initial indexing of large comic or book collections.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

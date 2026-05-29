@@ -1,0 +1,14 @@
+name: Jellyseerr
+description: Jellyseerr is a self-hosted request management and media discovery tool designed for Jellyfin and Emby media servers. It integrates with Sonarr and Radarr to automate TV show and movie downloads, providing a clean dashboard for users to request content.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyseerr.png
+depends_on:
+  - jellyfin
+  - sonarr
+  - radarr
+warnings:
+  - Requires integration with a running Jellyfin (or Emby) media server and optionally Sonarr/Radarr for request automation.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

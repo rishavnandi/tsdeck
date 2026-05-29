@@ -1,0 +1,20 @@
+name: Flatnotes
+description: Flatnotes is a self-hosted, minimalist note-taking web application that saves your notes directly as Markdown files, offering full-text search and a clean editor.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flatnotes.png
+warnings:
+  - Remember to change your default `FLATNOTES_PASSWORD` and set a strong `FLATNOTES_SECRET_KEY`.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: FLATNOTES_AUTH_TYPE
+    description: Authentication type (e.g. password, none)
+    default: password
+  - name: FLATNOTES_USERNAME
+    description: Admin username for login
+    default: user
+  - name: FLATNOTES_PASSWORD
+    description: Admin password for login
+    default: securepassword123
+

@@ -1,0 +1,17 @@
+services:
+  changedetection:
+    image: ghcr.io/dgtlmoon/changedetection.io:latest
+    container_name: changedetection
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - changedetection-data:/datastore
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "changedetection"
+    restart: always
+
+volumes:
+  changedetection-data:

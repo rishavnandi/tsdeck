@@ -1,0 +1,7 @@
+[install]
+# Use the Bun registry
+registry = "https://registry.npmjs.org"
+
+[install.cache]
+# Cache packages locally
+dir = "node_modules/.bun-cache"

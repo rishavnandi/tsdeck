@@ -1,0 +1,10 @@
+name: Dockhand
+description: Dockhand is a modern, lightweight Docker management UI focused on real-time container operations, live logs, and simple Docker Compose stack orchestration.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dockhand.png
+warnings:
+  - Requires access to the host's Docker socket (`/var/run/docker.sock`), granting it full administrative access to manage containers on the host.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

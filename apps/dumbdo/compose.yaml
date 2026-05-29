@@ -1,0 +1,15 @@
+services:
+  dumbdo:
+    image: docker.io/dumbwareio/dumbdo:latest
+    container_name: dumbdo
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - dumbdo-data:/app/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "dumbdo"
+    restart: always
+
+volumes:
+  dumbdo-data:

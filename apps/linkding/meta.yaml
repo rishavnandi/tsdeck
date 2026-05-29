@@ -1,0 +1,10 @@
+name: Linkding
+description: Linkding is a minimalist, fast, and self-hosted bookmark manager designed to be clean, fast, and easy to set up. It features tag-based organization, automatic title and description metadata retrieval, a built-in search engine, and integration extensions for popular browsers.
+category: bookmarks
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkding.png
+warnings:
+  - Database and bookmarks are stored locally; ensure regular backups of the linkding-data volume to avoid losing saved links.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

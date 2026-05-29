@@ -1,0 +1,15 @@
+name: Immich
+description: Immich is a high-performance, self-hosted photo and video backup and management solution. It features AI-powered facial recognition, object detection, automatic backups via mobile apps, and metadata search, acting as a complete alternative to Google Photos.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+warnings:
+  - Immich requires at least 4GB RAM and significant CPU for machine learning.
+  - Video transcoding and machine learning processes are highly resource-intensive; configuring hardware acceleration (GPU) is recommended for optimal performance.
+required_env_vars:
+  - name: IMMICH_VERSION
+    description: Immich version tag
+    default: release
+  - name: IMMICH_UPLOAD_DIR
+    description: Host directory for photo/video uploads
+    default: /opt/tsdeck/immich/upload
+

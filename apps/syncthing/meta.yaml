@@ -1,0 +1,13 @@
+name: Syncthing
+description: Syncthing is a continuous, peer-to-peer decentralized file synchronization application. It replaces proprietary cloud sync and storage services with a secure, private, and encrypted direct file exchange.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png
+warnings:
+  - Exposes port 22000 (TCP/UDP) and port 21027 (UDP) on the host for direct peer discovery and sync protocol connections.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Host directory for synchronized files and shared folders
+    default: /opt/tsdeck/syncthing/data

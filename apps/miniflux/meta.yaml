@@ -1,0 +1,17 @@
+name: Miniflux
+description: Miniflux is a minimalist, open-source, and fast self-hosted RSS reader designed to be simple, efficient, and clean.
+category: bookmarks
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/miniflux.png
+warnings:
+  - Requires a companion PostgreSQL database, which is fully configured and included in this stack.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: ADMIN_USERNAME
+    description: Miniflux administrator username
+    default: admin
+  - name: ADMIN_PASSWORD
+    description: Miniflux administrator password
+  - name: TAILNET_NAME
+    description: Your Tailscale network name (e.g. tailnet-name.ts.net)

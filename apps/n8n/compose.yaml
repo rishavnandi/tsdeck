@@ -1,0 +1,16 @@
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: n8n
+    environment:
+      - GENERIC_TIMEZONE=${TZ}
+      - TZ=${TZ}
+    volumes:
+      - n8n-data:/home/node/.n8n
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "n8n"
+    restart: always
+
+volumes:
+  n8n-data:

@@ -1,0 +1,10 @@
+name: Haptic
+description: Haptic is a modern, responsive, self-hosted web music player client designed to stream from Subsonic-compatible music servers like Navidrome, Airsonic, or Gonic.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/haptic.png
+depends_on:
+  - navidrome
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

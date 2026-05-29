@@ -1,0 +1,17 @@
+{
+  "name": "tsdeck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "api"
+  ],
+  "scripts": {
+    "build-registry": "bun scripts/build-registry.js",
+    "validate-apps": "bun scripts/validate-apps.js",
+    "test": "cd api && bun test"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.1"
+  }
+}

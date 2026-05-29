@@ -1,0 +1,10 @@
+name: Speedtest Tracker
+description: Speedtest Tracker is a self-hosted application that automatically runs periodic internet speed tests and visualizes the results over time with detailed charts and history.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/speedtest-tracker.png
+warnings:
+  - Running frequent speed tests can consume significant network bandwidth and may impact internet performance during tests.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

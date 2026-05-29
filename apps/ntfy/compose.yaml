@@ -1,0 +1,20 @@
+services:
+  ntfy:
+    image: binwiederhier/ntfy:latest
+    container_name: ntfy
+    command:
+      - serve
+    environment:
+      - TZ=${TZ}
+    user: "1000:1000"
+    volumes:
+      - ntfy-cache:/var/cache/ntfy
+      - ntfy-etc:/etc/ntfy
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "ntfy"
+    restart: always
+
+volumes:
+  ntfy-cache:
+  ntfy-etc:

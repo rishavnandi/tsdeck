@@ -1,0 +1,17 @@
+services:
+  portracker:
+    image: docker.io/mostafawahied/portracker:latest
+    container_name: portracker
+    environment:
+      - TZ=${TZ}
+      - DATABASE_PATH=/data/portracker.db
+    volumes:
+      - portracker-data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "portracker"
+    restart: always
+
+volumes:
+  portracker-data:

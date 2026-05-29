@@ -1,0 +1,10 @@
+name: ClipCascade
+description: ClipCascade is a self-hosted, open-source clipboard manager that synchronizes and organizes your clipboard history securely across all your devices.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png
+warnings:
+  - Clipboard history may contain sensitive information like passwords; ensure your Tailscale ACLs are properly configured.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

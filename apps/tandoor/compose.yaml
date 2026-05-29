@@ -1,0 +1,45 @@
+services:
+  tandoor:
+    image: vabene1111/recipes:latest
+    container_name: tandoor
+    environment:
+      - TZ=${TZ}
+      - DB_ENGINE=django.db.backends.postgresql
+      - POSTGRES_HOST=tandoor-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=tandoor_db_password
+      - POSTGRES_DB=tandoor
+      - SECRET_KEY=change-me-please-secret-key-1234
+      - TANDOOR_PORT=8080
+    volumes:
+      - tandoor-static:/opt/recipes/staticfiles
+      - tandoor-media:/opt/recipes/mediafiles
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "tandoor"
+    depends_on:
+      tandoor-db:
+        condition: service_healthy
+    restart: always
+
+  tandoor-db:
+    image: postgres:16-alpine
+    container_name: tandoor-db
+    environment:
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=tandoor_db_password
+      - POSTGRES_DB=tandoor
+    volumes:
+      - tandoor-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  tandoor-static:
+  tandoor-media:
+  tandoor-db-data:

@@ -1,0 +1,13 @@
+name: Configarr
+description: Configarr is a declarative configuration management tool designed to manage and synchronize settings for Sonarr and Radarr using YAML files.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/configarr.png
+depends_on:
+  - sonarr
+  - radarr
+warnings:
+  - Requires Sonarr and Radarr API access to synchronize and manage configurations.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

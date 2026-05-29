@@ -1,0 +1,10 @@
+name: Copyparty
+description: Copyparty is a fast and lightweight self-hosted file server supporting drag-and-drop uploads, media streaming, WebDAV, directory browsing, and user authentication.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/copyparty.png
+warnings:
+  - Copyparty does not have default authentication enabled in this basic compose. Secure your data by configuring `/cfg/copyparty.conf` or setting appropriate access controls.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

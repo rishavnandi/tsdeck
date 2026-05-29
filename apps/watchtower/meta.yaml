@@ -1,0 +1,7 @@
+name: Watchtower
+description: Watchtower is a lightweight application that automates Docker container base image updates. It monitors active containers, detects new base image versions on registries, and cleanly restarts containers with new configurations.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchtower.png
+warnings:
+  - Requires full read-write access to the host's Docker socket (/var/run/docker.sock) to orchestrate and update containers.
+required_env_vars: []

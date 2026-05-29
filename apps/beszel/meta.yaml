@@ -1,0 +1,13 @@
+name: Beszel
+description: Beszel is a lightweight, self-hosted server resource monitoring hub and agent that provides real-time CPU, memory, disk, network, and GPU utilization metrics with historical charts and alerts.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/beszel.png
+warnings:
+  - The Beszel Agent requires access to the host's Docker socket and proc system directory to monitor hardware metrics and container resource usage.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the containers
+    default: Europe/Amsterdam
+  - name: BESZEL_AGENT_KEY
+    description: The public SSH key generated in the Beszel Hub settings, used to secure the agent connection
+    default: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...

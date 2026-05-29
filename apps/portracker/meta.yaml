@@ -1,0 +1,10 @@
+name: Portracker
+description: Portracker is a modern, simple self-hosted dashboard that tracks active open ports and network socket usage across your host system and running containers.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portracker.png
+warnings:
+  - Requires access to the host's Docker socket and database paths to accurately discover and monitor running service ports.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,19 @@
+services:
+  subtrackr:
+    image: ghcr.io/bscott/subtrackr:latest
+    container_name: subtrackr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - GIN_MODE=release
+      - DATABASE_PATH=/app/data/subtrackr.db
+    volumes:
+      - subtrackr-data:/app/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "subtrackr"
+    restart: always
+
+volumes:
+  subtrackr-data:

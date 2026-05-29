@@ -1,0 +1,16 @@
+services:
+  memos:
+    image: neosmemo/memos:stable
+    container_name: memos
+    environment:
+      MEMOS_PORT: 5230
+      MEMOS_DRIVER: sqlite
+    volumes:
+      - memos-data:/var/opt/memos
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "memos"
+    restart: always
+
+volumes:
+  memos-data:

@@ -1,0 +1,21 @@
+{
+  "name": "tsdeck-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest --run"
+  },
+  "dependencies": {
+    "hono": "^4.4.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.4.0",
+    "@cloudflare/workers-types": "^4.20240501.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.5.0",
+    "wrangler": "^3.57.0"
+  }
+}

@@ -1,0 +1,22 @@
+services:
+  slink:
+    image: anirdev/slink:latest
+    container_name: slink
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - ORIGIN=${SLINK_ORIGIN}
+      - USER_APPROVAL_REQUIRED=${SLINK_USER_APPROVAL_REQUIRED}
+      - STORAGE_PROVIDER=${SLINK_STORAGE_PROVIDER}
+    volumes:
+      - slink-data:/app/var/data
+      - slink-images:/app/slink/images
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "slink"
+    restart: always
+
+volumes:
+  slink-data:
+  slink-images:

@@ -1,0 +1,10 @@
+name: Prowlarr
+description: Prowlarr is an indexer manager and proxy built on the popular Arr .NET stack, integrating seamlessly with your download clients and automation tools to track torrent and Usenet indexers.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/prowlarr.png
+warnings:
+  - Ensure indexer requests are secured or proxied to prevent ISP notifications or IP exposure if downloading copyrighted material.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

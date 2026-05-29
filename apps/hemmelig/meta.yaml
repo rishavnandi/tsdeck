@@ -1,0 +1,16 @@
+name: Hemmelig
+description: Hemmelig is a self-hosted secure secret sharing web application that allows users to encrypt and transmit sensitive data (passwords, notes, keys) that automatically self-destruct once read.
+category: security
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hemmelig.png
+warnings:
+  - Requires setting up a secure BETTER_AUTH_SECRET (at least 32 characters) for cryptographic operations and authentication security.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: BETTER_AUTH_URL
+    description: Publicly accessible URL for auth endpoints
+    default: http://localhost:3000
+  - name: HEMMELIG_BASE_URL
+    description: Publicly accessible base URL of your Hemmelig instance
+    default: http://localhost:3000

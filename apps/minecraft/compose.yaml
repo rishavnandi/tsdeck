@@ -1,0 +1,25 @@
+services:
+  minecraft:
+    image: docker.io/itzg/minecraft-server:latest
+    container_name: minecraft
+    environment:
+      - EULA=TRUE
+      - TYPE=${SERVER_TYPE:-VANILLA}
+      - VERSION=${MINECRAFT_VERSION:-LATEST}
+      - DIFFICULTY=${DIFFICULTY:-normal}
+      - MAX_PLAYERS=${MAX_PLAYERS:-10}
+      - MOTD=${MOTD:-A Minecraft Server on Tailscale}
+      - MEMORY=${MEMORY:-2G}
+      - ONLINE_MODE=true
+      - TZ=${TZ}
+    ports:
+      - 25565:25565
+    volumes:
+      - minecraft-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "minecraft"
+    restart: always
+
+volumes:
+  minecraft-data:

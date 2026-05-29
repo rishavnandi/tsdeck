@@ -1,0 +1,11 @@
+name: Adguardhome
+description: AdGuard Home is a network-wide software utility for blocking ads and tracking, acting as a DNS server that redirects tracking domains to a black hole. It provides comprehensive control over all devices on your local network without requiring client-side configuration.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
+warnings:
+  - AdGuard Home acts as a DNS server; ensure port 53 is not in use by other services (like systemd-resolved) on the host.
+  - Improper configuration of DNS upstream servers can result in local network-wide loss of internet connectivity.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,14 @@
+name: SearXNG
+description: SearXNG is a privacy-respecting, hackable metasearch engine that aggregates results from dozens of search engines without tracking or profiling you.
+category: ai
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/searxng.png
+warnings:
+  - Requires a unique, randomly-generated SEARXNG_SECRET_KEY to start successfully. Session cookies will be signed using this key.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: SEARXNG_BASE_URL
+    description: The base URL of your SearXNG instance (e.g. https://searxng.your-tailnet.ts.net/)
+    default: http://localhost:8080/
+

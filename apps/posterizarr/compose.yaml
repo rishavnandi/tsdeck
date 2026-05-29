@@ -1,0 +1,24 @@
+services:
+  posterizarr:
+    image: docker.io/ghcr.io/fscorrupt/posterizarr:latest
+    container_name: posterizarr
+    environment:
+      - TZ=${TZ}
+      - TERM=xterm
+      - RUN_TIME=disabled
+    user: "1000:1000"
+    volumes:
+      - posterizarr-config:/config
+      - posterizarr-assets:/assets
+      - posterizarr-assetsbackup:/assetsbackup
+      - posterizarr-manualassets:/manualassets
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "posterizarr"
+    restart: always
+
+volumes:
+  posterizarr-config:
+  posterizarr-assets:
+  posterizarr-assetsbackup:
+  posterizarr-manualassets:

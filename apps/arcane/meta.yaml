@@ -1,0 +1,19 @@
+name: Arcane
+description: Arcane is an open-source, self-hosted Docker container and Compose stack manager featuring a modern web interface to control containers, images, volumes, and networks.
+category: remote-access
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/arcane.png
+warnings:
+  - Requires access to the host's Docker socket (`/var/run/docker.sock`), granting it full administrative access to manage containers on the host.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: APP_URL
+    description: External URL of the Arcane application (e.g. https://arcane.<tailnet-name>.ts.net)
+    default: https://arcane.tailnet.ts.net
+  - name: ARCANE_ENCRYPTION_KEY
+    description: Secret key for encrypting stored data (generate with openssl rand -hex 32)
+    default: ""
+  - name: ARCANE_JWT_SECRET
+    description: Secret key for signing JWT authentication tokens (generate with openssl rand -hex 32)
+    default: ""

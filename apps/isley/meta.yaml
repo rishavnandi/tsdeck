@@ -1,0 +1,8 @@
+name: Isley
+description: Isley is an open-source, self-hosted web-based comic reader and media library organizer designed for digital comic enthusiasts.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/booklore.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

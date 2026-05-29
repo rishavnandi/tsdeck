@@ -1,0 +1,10 @@
+name: Mealie
+description: Mealie is a fully-featured, self-hosted recipe manager and meal planner with a beautiful user interface. It allows you to easily import recipes from websites by URL, customize meal plans, generate shopping lists, and share recipes with family members.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mealie.png
+warnings:
+  - By default, sign-up is disabled via ALLOW_SIGNUP: false; modify this environment variable if you need to create additional user accounts.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

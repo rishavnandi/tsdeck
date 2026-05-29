@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSDeck — Ninite for Homelabbers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.API_BASE = "https://tsdeck-api.rishavnandi.workers.dev";
+  </script>
+</head>
+<body>
+  <div class="glow-bg">
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
+  </div>
+  <div class="container">
+    <header>
+      <h1>TSDeck</h1>
+      <p>Pick your apps. Run one command. They're on your Tailnet.</p>
+    </header>
+
+    <main>
+      <div id="loading">Loading app catalog...</div>
+      <div id="catalog" class="hidden">
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search 134 apps..." autocomplete="off" spellcheck="false">
+        </div>
+        <div id="categories"></div>
+        <div class="actions">
+          <button id="generate-btn" disabled>Generate Install Command</button>
+          <span id="selected-count">0 apps selected</span>
+        </div>
+      </div>
+
+      <div id="result" class="hidden">
+        <h2>Your Install Command</h2>
+        <div id="warnings" class="hidden"></div>
+        <p>Copy and run this on your server:</p>
+        <div class="code-block">
+          <code id="curl-command"></code>
+          <button id="copy-btn">Copy</button>
+        </div>
+        <p class="hint"><span>This command is valid for 15 minutes. Run it on your server within this window. To add or remove apps later, regenerate a new command containing your <strong>entire desired stack</strong> (omitted apps will be stopped and removed).</span></p>
+        <button id="back-btn">Pick Different Apps</button>
+      </div>
+
+      <div id="error" class="hidden">
+        <p class="error-text">Something went wrong. Please try again.</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>TSDeck never stores your credentials. All secrets are prompted on your server.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

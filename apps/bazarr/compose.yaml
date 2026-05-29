@@ -1,0 +1,18 @@
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - bazarr-config:/config
+      - ${DATA_DIR}:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "bazarr"
+    restart: always
+
+volumes:
+  bazarr-config:

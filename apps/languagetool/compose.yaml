@@ -1,0 +1,18 @@
+services:
+  languagetool:
+    image: docker.io/erikvl87/languagetool:latest
+    container_name: languagetool
+    environment:
+      - TZ=${TZ}
+      - langtool_languageModel=/ngrams
+      - Java_Xms=512m
+      - Java_Xmx=1g
+    volumes:
+      - languagetool-data:/ngrams
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "languagetool"
+    restart: always
+
+volumes:
+  languagetool-data:

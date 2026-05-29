@@ -1,0 +1,21 @@
+services:
+  lube-logger:
+    image: docker.io/ghcr.io/hargata/lubelogger:latest
+    container_name: lube-logger
+    environment:
+      - TZ=${TZ}
+      - LC_ALL=en_US.UTF-8
+      - LANG=en_US.UTF-8
+      - LUBELOGGER_MOTD=${LUBELOGGER_MOTD:-My Car}
+      - LUBELOGGER_DOMAIN=${LUBELOGGER_DOMAIN}
+    volumes:
+      - lube-logger-data:/App/data
+      - lube-logger-keys:/root/.aspnet/DataProtection-Keys
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "lube-logger"
+    restart: always
+
+volumes:
+  lube-logger-data:
+  lube-logger-keys:

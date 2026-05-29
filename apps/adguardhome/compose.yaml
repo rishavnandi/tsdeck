@@ -1,0 +1,17 @@
+services:
+  adguardhome:
+    image: adguard/adguardhome:latest
+    container_name: adguardhome
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - adguardhome-work:/opt/adguardhome/work
+      - adguardhome-conf:/opt/adguardhome/conf
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "adguardhome"
+    restart: always
+
+volumes:
+  adguardhome-work:
+  adguardhome-conf:

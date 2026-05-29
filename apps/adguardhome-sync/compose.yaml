@@ -1,0 +1,19 @@
+services:
+  adguardhome-sync:
+    image: ghcr.io/bakito/adguardhome-sync:latest
+    container_name: adguardhome-sync
+    command: run
+    environment:
+      - TZ=${TZ}
+      - ORIGIN_URL=${ADGUARDHOME_ORIGIN_URL}
+      - ORIGIN_USERNAME=${ADGUARDHOME_ORIGIN_USERNAME}
+      - ORIGIN_PASSWORD=${ADGUARDHOME_ORIGIN_PASSWORD}
+      - REPLICA1_URL=${ADGUARDHOME_REPLICA_URL}
+      - REPLICA1_USERNAME=${ADGUARDHOME_REPLICA_USERNAME}
+      - REPLICA1_PASSWORD=${ADGUARDHOME_REPLICA_PASSWORD}
+      - CRON=${ADGUARDHOME_SYNC_CRON}
+      - RUN_ON_START=true
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "adguardhome-sync"
+    restart: always

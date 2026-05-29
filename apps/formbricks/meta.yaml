@@ -1,0 +1,14 @@
+name: Formbricks
+description: Formbricks is a privacy-first, open-source survey and feedback management suite. It allows product and marketing teams to easily create in-app, link, and email surveys to capture user insights without vendor lock-in.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/formbricks.png
+warnings:
+  - Requires separate database and Redis containers; ensure no naming or port conflicts exist on your docker network.
+  - You must configure the WEBAPP_URL environment variable to match your public HTTPS domain for emails and links to work correctly.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: WEBAPP_URL
+    description: Publicly accessible URL of the Formbricks instance
+    default: http://localhost:3000

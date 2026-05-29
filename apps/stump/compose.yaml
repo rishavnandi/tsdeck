@@ -1,0 +1,16 @@
+services:
+  stump:
+    image: aaronosher/stump:latest
+    container_name: stump
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - stump-config:/config
+      - ${DATA_DIR}:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "stump"
+    restart: always
+
+volumes:
+  stump-config:

@@ -1,0 +1,8 @@
+# Dependencies
+node_modules/
+
+# OS metadata
+.DS_Store
+
+# Wrangler local dev state
+api/.wrangler/

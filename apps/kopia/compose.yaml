@@ -1,0 +1,31 @@
+services:
+  kopia:
+    image: kopia/kopia:latest
+    container_name: kopia
+    environment:
+      - TZ=${TZ}
+      - KOPIA_PASSWORD=${KOPIA_PASSWORD}
+    command:
+      - server
+      - start
+      - --disable-csrf-token-checks
+      - --insecure
+      - --address=0.0.0.0:51515
+      - --server-username=${KOPIA_USERNAME}
+      - --server-password=${KOPIA_PASSWORD}
+    volumes:
+      - kopia-config:/app/config
+      - kopia-cache:/app/cache
+      - kopia-logs:/app/logs
+      - ${DATA_DIR}:/data:ro
+      - kopia-repository:/repository
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "kopia"
+    restart: always
+
+volumes:
+  kopia-config:
+  kopia-cache:
+  kopia-logs:
+  kopia-repository:

@@ -1,0 +1,13 @@
+name: Stump
+description: Stump is a fast, free, and open-source comic book server. It is built to serve digital comic libraries, ePUB books, and PDF files, featuring responsive web readers, robust library organization, and OPDS server support.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/stump.png
+warnings:
+  - Make sure that your digital book and comic directories have read permissions granted to the container.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

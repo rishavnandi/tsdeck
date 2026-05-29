@@ -1,0 +1,19 @@
+services:
+  vikunja:
+    image: vikunja/vikunja:latest
+    container_name: vikunja
+    user: "0:0"
+    environment:
+      - TZ=${TZ}
+      - VIKUNJA_DATABASE_PATH=/db/vikunja.db
+    volumes:
+      - vikunja-files:/app/vikunja/files
+      - vikunja-db:/db
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "vikunja"
+    restart: always
+
+volumes:
+  vikunja-files:
+  vikunja-db:

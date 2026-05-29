@@ -1,0 +1,17 @@
+services:
+  metube:
+    image: ghcr.io/alexta69/metube:latest
+    container_name: metube
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - metube-downloads:/downloads
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "metube"
+    restart: always
+
+volumes:
+  metube-downloads:

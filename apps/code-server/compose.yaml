@@ -1,0 +1,18 @@
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - PASSWORD=${CODE_SERVER_PASSWORD}
+    volumes:
+      - code-server-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "code-server"
+    restart: always
+
+volumes:
+  code-server-config:

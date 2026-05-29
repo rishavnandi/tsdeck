@@ -1,0 +1,13 @@
+name: Gramps Web
+description: Gramps Web is a collaborative, self-hosted web application for genealogy. It allows multiple users to view, edit, and collaborate on a shared family tree using a responsive and modern web interface.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gramps-web.png
+warnings:
+  - Gramps Web relies on a companion Celery worker and Redis broker (both included) to run long-running tasks like imports, reports, and search indexing.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: GRAMPSWEB_TREE
+    description: Name of the family tree to create/use on initial setup
+    default: "Gramps Web"

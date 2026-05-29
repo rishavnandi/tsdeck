@@ -1,0 +1,12 @@
+name: Tailscale Exit Node
+description: Tailscale Exit Node enables you to route all of your public internet traffic through a specific device on your Tailnet. This allows you to securely access the web when using untrusted networks (like public Wi-Fi) by routing and encrypting your traffic through your home or office connection.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png
+warnings:
+  - Requires a valid Tailscale Auth Key (TS_AUTHKEY) to register the node with your Tailnet.
+  - Requires the NET_ADMIN capability and access to the host's TUN device (/dev/net/tun) to configure networking.
+  - IP forwarding must be enabled on the host machine for exit node routing to work correctly.
+required_env_vars:
+  - name: TS_AUTHKEY
+    description: Tailscale Auth Key (tskey-auth-...) to authorize this exit node in your Tailnet
+    default: tskey-auth-change-me

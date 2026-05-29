@@ -1,0 +1,8 @@
+name: MiniQR
+description: MiniQR is a lightweight, clean self-hosted QR code generator that helps users quickly create customizable QR codes with complete privacy.
+category: utilities
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

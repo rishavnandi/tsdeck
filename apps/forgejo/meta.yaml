@@ -1,0 +1,10 @@
+name: Forgejo
+description: Forgejo is a self-hosted, lightweight software development platform for hosting Git repositories. Forked from Gitea, it includes source code hosting, code review, issues, pull requests, package registries, and integrated CI/CD actions.
+category: development
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/forgejo.png
+warnings:
+  - By default, Forgejo uses an embedded SQLite database which is suitable for small teams but may require migration to Postgres or MariaDB for larger installations.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

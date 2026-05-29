@@ -1,0 +1,10 @@
+name: ConvertX
+description: ConvertX is a self-hosted, user-friendly media conversion tool designed to convert and optimize media files using hardware acceleration.
+category: utilities
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/convertx.png
+warnings:
+  - Media conversion can be extremely CPU and GPU intensive. Monitor your server's resource utilization during batch conversion processes.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

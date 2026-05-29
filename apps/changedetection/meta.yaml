@@ -1,0 +1,10 @@
+name: Changedetection
+description: Changedetection is a self-hosted website monitoring tool that detects visual and structural changes in web pages. It features configurable scheduling, detailed diff visualizations, and comprehensive notification integrations.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/changedetection.png
+warnings:
+  - Performing frequent browser-based checks (especially with Playwright or WebDriver) can consume significant RAM and CPU resources.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,18 @@
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - sonarr-config:/config
+      - ${DATA_DIR}:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "sonarr"
+    restart: always
+
+volumes:
+  sonarr-config:

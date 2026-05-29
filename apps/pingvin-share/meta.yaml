@@ -1,0 +1,10 @@
+name: Pingvin Share
+description: Pingvin Share is a self-hosted file sharing platform that allows you to easily upload and share files with customizable link expiration times, password protection, and download limits.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pingvin-share.png
+warnings:
+  - Ensure you have sufficient disk space on the host volume to store uploaded files and handle large file transfers.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

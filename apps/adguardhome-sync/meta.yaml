@@ -1,0 +1,33 @@
+name: AdGuard Home Sync
+description: AdGuard Home Sync is a lightweight synchronization tool that replicates configuration, filters, client settings, and query logs across multiple AdGuard Home instances.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home-sync.png
+depends_on:
+  - adguardhome
+warnings:
+  - Requires credentials and API endpoints for both the origin and replica AdGuard Home instances to synchronize settings.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: ADGUARDHOME_ORIGIN_URL
+    description: The URL of the primary AdGuard Home instance (origin)
+    default: http://adguardhome:80
+  - name: ADGUARDHOME_ORIGIN_USERNAME
+    description: Username for the primary AdGuard Home instance
+    default: admin
+  - name: ADGUARDHOME_ORIGIN_PASSWORD
+    description: Password for the primary AdGuard Home instance
+    default: change-me-please
+  - name: ADGUARDHOME_REPLICA_URL
+    description: The URL of the destination AdGuard Home instance (replica)
+    default: http://192.168.1.100:80
+  - name: ADGUARDHOME_REPLICA_USERNAME
+    description: Username for the replica AdGuard Home instance
+    default: admin
+  - name: ADGUARDHOME_REPLICA_PASSWORD
+    description: Password for the replica AdGuard Home instance
+    default: change-me-please
+  - name: ADGUARDHOME_SYNC_CRON
+    description: Cron schedule expression for synchronization frequency
+    default: "*/5 * * * *"

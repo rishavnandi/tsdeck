@@ -1,0 +1,19 @@
+name: Tracktor
+description: Tracktor is an open-source, self-hosted vehicle management application built on SvelteKit and SQLite. It provides a simple, modern interface to track fuel consumption, vehicle maintenance logs, insurance details, and essential regulatory documents.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/transmission.png
+warnings:
+  - Requires persistent data storage for the SQLite database. Ensure the data volume is securely backed up.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: TRACKTOR_DEMO_MODE
+    description: Enable demo mode with mock data (true or false)
+    default: "false"
+  - name: TRACKTOR_FORCE_DATA_SEED
+    description: Force seed database with initial schema (true or false)
+    default: "false"
+  - name: TRACKTOR_CORS_ORIGINS
+    description: Comma-separated list of allowed CORS origins (* for all)
+    default: "*"

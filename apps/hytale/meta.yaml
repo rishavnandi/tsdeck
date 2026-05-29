@@ -1,0 +1,17 @@
+name: Hytale Server
+description: Hytale Server is a self-hosted server deployment for the upcoming sandbox adventure game Hytale, allowing players to host their own custom servers and multiplayer games.
+category: gaming
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hytale.png
+warnings:
+  - This server uses UDP port 5520 to allow incoming game connections from players.
+  - Requires mounting the host's /etc/machine-id file into the container in read-only mode for licensing/hardware signature purposes.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: PROD
+    description: Flag to run server in production mode (true or false)
+    default: "false"
+  - name: DEBUG
+    description: Enable verbose debug logging in the Hytale game server logs (true or false)
+    default: "false"

@@ -1,0 +1,19 @@
+name: Slink
+description: Slink is a fast, self-hosted file and image sharing platform built with Symfony and SvelteKit. It offers full control over your media, featuring private link sharing, password protection, and direct integration with tools like ShareX.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/slink.png
+warnings:
+  - Requires origin URL configuration to properly direct sharing links and secure uploads.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: SLINK_ORIGIN
+    description: The primary public origin URL of your Slink instance
+    default: http://localhost:3000
+  - name: SLINK_USER_APPROVAL_REQUIRED
+    description: Set to true to require admin approval before new users can upload images
+    default: "true"
+  - name: SLINK_STORAGE_PROVIDER
+    description: Storage provider type (local or smb)
+    default: local

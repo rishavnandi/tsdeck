@@ -1,0 +1,10 @@
+name: Posterizarr
+description: Posterizarr is an automated utility that generates customized overlay posters for Plex, Emby, or Jellyfin media libraries based on user configuration.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/posterizarr.png
+depends_on:
+  - plex
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

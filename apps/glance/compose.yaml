@@ -1,0 +1,15 @@
+services:
+  glance:
+    image: glanceapp/glance:latest
+    container_name: glance
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - glance-data:/app/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "glance"
+    restart: always
+
+volumes:
+  glance-data:

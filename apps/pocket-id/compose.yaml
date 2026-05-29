@@ -1,0 +1,20 @@
+services:
+  pocket-id:
+    image: docker.io/ghcr.io/pocket-id/pocket-id:v2
+    container_name: pocket-id
+    environment:
+      - APP_URL=${APP_URL}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - TRUST_PROXY=true
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - pocket-id-data:/app/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "pocket-id"
+    restart: always
+
+volumes:
+  pocket-id-data:

@@ -1,0 +1,7 @@
+name: Homepage
+description: Homepage is a highly customizable, modern, and aesthetically pleasing application dashboard and start page that integrates with Docker and various self-hosted services. It provides real-time service status, system resource monitoring, and direct widgets for popular home lab tools.
+category: dashboards
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png
+warnings:
+  - Mounting the Docker socket (/var/run/docker.sock) read-only allows Homepage to monitor container states, but exposes Docker daemon access to the container.
+required_env_vars: []

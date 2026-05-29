@@ -1,0 +1,8 @@
+name: Ollama
+description: Ollama is a lightweight, extensible framework for building and running large language models (LLMs) locally on your own hardware. It allows you to easily download, run, and interact with open-source models like Llama, Mistral, and Gemma via a robust local API.
+category: ai
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama.png
+warnings:
+  - Ollama is resource-intensive and requires substantial CPU or GPU resources for model inference.
+  - To run inference with GPU acceleration, you must install the NVIDIA Container Toolkit on your host and pass GPU devices to the container.
+required_env_vars: []

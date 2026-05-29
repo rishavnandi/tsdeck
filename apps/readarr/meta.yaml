@@ -1,0 +1,17 @@
+name: Readarr
+description: Readarr is an ebook and audiobook collection manager for Usenet and BitTorrent users. It monitors multiple RSS feeds for new books and integrates with download clients and indexers to fully automate downloading, parsing, and renaming.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/readarr.png
+depends_on:
+  - prowlarr
+  - qbittorrent
+warnings:
+  - Readarr is in active development (develop branch). Ensure you keep regular backups of your library and configuration.
+  - Requires a torrent or Usenet download client (e.g. qBittorrent) and indexer manager (e.g. Prowlarr) to automate downloads.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

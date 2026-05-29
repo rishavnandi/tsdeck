@@ -1,0 +1,12 @@
+name: Pocket ID
+description: Pocket ID is a simple, lightweight self-hosted OIDC/OAuth2 identity provider that allows you to easily manage users and authenticate services across your homelab.
+category: security
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pocket-id.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: APP_URL
+    description: Public URL of Pocket-ID, e.g. https://pocket-id.your-domain.ts.net
+  - name: ENCRYPTION_KEY
+    description: Encryption key for secure OIDC credentials storage (e.g. a secure base64 string)

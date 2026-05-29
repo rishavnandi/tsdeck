@@ -1,0 +1,17 @@
+services:
+  tautulli:
+    image: lscr.io/linuxserver/tautulli:latest
+    container_name: tautulli
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - tautulli-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "tautulli"
+    restart: always
+
+volumes:
+  tautulli-config:

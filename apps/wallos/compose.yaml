@@ -1,0 +1,23 @@
+services:
+  wallos:
+    image: bellamy/wallos:latest
+    container_name: wallos
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - wallos-db:/var/www/html/db
+      - wallos-logos:/var/www/html/images/uploads/logos
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "wallos"
+    healthcheck:
+      test: ["CMD", "pgrep", "-f", "nginx"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: always
+
+volumes:
+  wallos-db:
+  wallos-logos:

@@ -1,0 +1,18 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - jellyfin-config:/config
+      - ${DATA_DIR}:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "jellyfin"
+    restart: always
+
+volumes:
+  jellyfin-config:

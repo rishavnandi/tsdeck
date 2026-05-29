@@ -1,0 +1,13 @@
+name: Gotify
+description: Gotify is a simple, lightweight self-hosted notification server that allows you to send and receive push messages in real-time via WebSockets or a REST API.
+category: communication
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png
+warnings:
+  - Changing GOTIFY_DEFAULTUSER_PASS only takes effect during the initial startup of the container.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: GOTIFY_DEFAULTUSER_PASS
+    description: Default password for the admin account (only used on first run)
+    default: admin

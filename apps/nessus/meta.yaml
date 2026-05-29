@@ -1,0 +1,10 @@
+name: Nessus
+description: Nessus is a comprehensive, self-hosted vulnerability scanner that provides deep network assessments, configuration audits, and security analysis.
+category: monitoring
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tenable.png
+warnings:
+  - Vulnerability scanning is highly resource-intensive and may trigger intrusion detection systems or firewalls on target networks.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

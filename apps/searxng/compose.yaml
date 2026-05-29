@@ -1,0 +1,41 @@
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    environment:
+      - TZ=${TZ}
+      - SEARXNG_BASE_URL=${SEARXNG_BASE_URL}
+      - SEARXNG_SECRET_KEY=change-me-please-secret-key
+      - SEARXNG_REDIS_URL=redis://searxng-redis:6379/0
+    volumes:
+      - searxng-config:/etc/searxng
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    depends_on:
+      - searxng-redis
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "searxng"
+    restart: always
+
+  searxng-redis:
+    image: docker.io/valkey/valkey:8-alpine
+    container_name: searxng-redis
+    command: valkey-server --save 30 1 --loglevel warning
+    volumes:
+      - searxng-redis-data:/data
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    restart: always
+
+volumes:
+  searxng-config:
+  searxng-redis-data:

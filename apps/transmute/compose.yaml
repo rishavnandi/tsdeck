@@ -1,0 +1,23 @@
+services:
+  transmute:
+    image: ghcr.io/transmute-app/transmute:latest
+    container_name: transmute
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - transmute-data:/app/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "transmute"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "--tries=1", "http://localhost:3313/api/health/ready"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: always
+
+volumes:
+  transmute-data:

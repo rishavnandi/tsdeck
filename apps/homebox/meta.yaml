@@ -1,0 +1,10 @@
+name: Homebox
+description: Homebox is a lightweight, self-hosted inventory and asset management system designed for tracking household items. It allows you to organize physical belongings, document warranties, track serial numbers, and manage locations through a clean, intuitive web interface.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homebox.png
+warnings:
+  - SQLite database is stored in the local volume; ensure regular backups of homebox-data to prevent asset record loss.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

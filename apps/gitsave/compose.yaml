@@ -1,0 +1,22 @@
+services:
+  gitsave:
+    image: timwitzdam/gitsave:latest
+    container_name: gitsave
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - JWT_SECRET=generate-a-secure-jwt-secret-key-string
+      - DISABLE_AUTH=${DISABLE_AUTH}
+      - ENCRYPTION_SECRET=encryption-secret-must-be-32-chars-long
+    volumes:
+      - gitsave-data:/app/data
+      - gitsave-backups:/app/backups
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "gitsave"
+    restart: always
+
+volumes:
+  gitsave-data:
+  gitsave-backups:

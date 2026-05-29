@@ -1,0 +1,40 @@
+services:
+  coder:
+    image: ghcr.io/coder/coder:latest
+    container_name: coder
+    environment:
+      CODER_PG_CONNECTION_URL: postgresql://coder:coder_db_pass@coder-db/coder?sslmode=disable
+      CODER_HTTP_ADDRESS: 0.0.0.0:7080
+      CODER_ACCESS_URL: ${CODER_ACCESS_URL}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - coder-home:/home/coder
+    depends_on:
+      coder-db:
+        condition: service_healthy
+    restart: always
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "coder"
+
+  coder-db:
+    container_name: coder-db
+    image: postgres:17
+    environment:
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: coder_db_pass
+      POSTGRES_DB: coder
+    volumes:
+      - coder-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U coder -d coder
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  coder-home:
+  coder-db-data:

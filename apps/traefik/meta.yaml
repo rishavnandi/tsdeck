@@ -1,0 +1,11 @@
+name: Traefik
+description: Traefik is a modern HTTP reverse proxy and load balancer designed to deploy microservices with ease. It automatically discovers configurations from your Docker containers and manages routes, entrypoints, and SSL certificates dynamically.
+category: infrastructure
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traefik.png
+warnings:
+  - Requires ports 80 and 443 to be free on your host. If you have another web server running, it will conflict with this deployment.
+  - Requires read-only access to the Docker socket (/var/run/docker.sock) to dynamically discover container services.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,17 @@
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - prowlarr-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "prowlarr"
+    restart: always
+
+volumes:
+  prowlarr-config:

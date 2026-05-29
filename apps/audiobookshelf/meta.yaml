@@ -1,0 +1,10 @@
+name: Audiobookshelf
+description: Audiobookshelf is a self-hosted media server designed specifically for audiobooks and podcasts. It features multi-user support, playback state syncing across devices, active author/narrator metadata scraping, and a built-in podcast host.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/audiobookshelf.png
+warnings:
+  - Initial metadata scanning and indexing can be CPU-intensive depending on the size of your audiobook library.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

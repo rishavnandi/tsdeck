@@ -1,0 +1,17 @@
+name: Kaneo
+description: Kaneo is a sleek, modern self-hosted Kanban project management platform that helps teams visualize workflows, track tasks, and collaborate without third-party vendor dependencies.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/taskcafe.png
+warnings:
+  - Requires separate database, frontend, backend, and proxy containers (included); ensure no naming conflicts exist.
+  - You must configure KANEO_API_URL and KANEO_CLIENT_URL environment variables to point to your public HTTPS domain for secure client-server communication.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: KANEO_API_URL
+    description: Public HTTPS API URL of the Kaneo instance
+    default: http://localhost:1337/api
+  - name: KANEO_CLIENT_URL
+    description: Public HTTPS client URL of the Kaneo instance
+    default: http://localhost:5173

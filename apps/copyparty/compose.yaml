@@ -1,0 +1,17 @@
+services:
+  copyparty:
+    image: docker.io/copyparty/ac:latest
+    container_name: copyparty
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - copyparty-config:/cfg
+      - copyparty-data:/w
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "copyparty"
+    restart: always
+
+volumes:
+  copyparty-config:
+  copyparty-data:

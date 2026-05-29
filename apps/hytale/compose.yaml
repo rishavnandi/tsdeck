@@ -1,0 +1,24 @@
+services:
+  hytale:
+    image: deinfreu/hytale-server:experimental
+    container_name: hytale
+    environment:
+      - SERVER_IP=0.0.0.0
+      - SERVER_PORT=5520
+      - PROD=${PROD}
+      - DEBUG=${DEBUG}
+      - TZ=${TZ}
+    volumes:
+      - hytale-data:/home/container
+      - /etc/machine-id:/etc/machine-id:ro
+    ports:
+      - "5520:5520/udp"
+    tty: true
+    stdin_open: true
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "hytale"
+    restart: unless-stopped
+
+volumes:
+  hytale-data:

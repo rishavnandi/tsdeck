@@ -1,0 +1,16 @@
+services:
+  gotify:
+    image: gotify/server:latest
+    container_name: gotify
+    environment:
+      - TZ=${TZ}
+      - GOTIFY_DEFAULTUSER_PASS=${GOTIFY_DEFAULTUSER_PASS}
+    volumes:
+      - gotify-data:/app/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "gotify"
+    restart: always
+
+volumes:
+  gotify-data:

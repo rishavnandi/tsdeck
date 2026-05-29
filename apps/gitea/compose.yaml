@@ -1,0 +1,19 @@
+services:
+  gitea:
+    image: docker.gitea.com/gitea:latest
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - TZ=${TZ}
+    volumes:
+      - gitea-data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "gitea"
+    restart: always
+
+volumes:
+  gitea-data:

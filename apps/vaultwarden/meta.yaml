@@ -1,0 +1,13 @@
+name: Vaultwarden
+description: Vaultwarden is an alternative, lightweight implementation of the Bitwarden secrets manager written in Rust, designed for self-hosting with minimal system resource consumption.
+category: security
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/vaultwarden.png
+warnings:
+  - It is highly recommended to run Vaultwarden behind an HTTPS reverse proxy (such as TSDProxy/Tailscale) to enable modern browser cryptography features and secure passwords.
+required_env_vars:
+  - name: VAULTWARDEN_SIGNUPS_ALLOWED
+    description: Allow new users to sign up
+    default: "false"
+  - name: VAULTWARDEN_ADMIN_TOKEN
+    description: Admin panel token (leave empty to disable)
+    default: ""

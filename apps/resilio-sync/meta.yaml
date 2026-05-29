@@ -1,0 +1,8 @@
+name: Resilio Sync
+description: Resilio Sync is a fast, peer-to-peer file synchronization tool that uses the BitTorrent protocol to securely transfer files between devices without cloud storage.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/resiliosync.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

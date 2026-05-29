@@ -1,0 +1,19 @@
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - pihole-config:/etc/pihole
+      - pihole-dnsmasq:/etc/dnsmasq.d
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "pihole"
+    restart: always
+
+volumes:
+  pihole-config:
+  pihole-dnsmasq:

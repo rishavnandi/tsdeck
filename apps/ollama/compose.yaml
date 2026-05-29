@@ -1,0 +1,16 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+      - OLLAMA_KEEP_ALIVE=24h
+    volumes:
+      - ollama-data:/root/.ollama
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "ollama"
+    restart: always
+
+volumes:
+  ollama-data:

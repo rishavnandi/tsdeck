@@ -1,0 +1,17 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    environment:
+      - WEBSOCKET_ENABLED=true
+      - SIGNUPS_ALLOWED=${VAULTWARDEN_SIGNUPS_ALLOWED:-false}
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_TOKEN:-}
+    volumes:
+      - vaultwarden-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "vaultwarden"
+    restart: always
+
+volumes:
+  vaultwarden-data:

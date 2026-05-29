@@ -1,0 +1,7 @@
+name: Booklore
+description: Booklore is a self-hosted book collection tracker and reading progress manager. It allows you to organize your digital library, log reading sessions, and visualize your reading habits with detailed statistics and goals.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png
+warnings:
+  - Contains an embedded MariaDB service; ensure no other service on the docker network conflicts with the container name 'booklore-db'.
+required_env_vars: []

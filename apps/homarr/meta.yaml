@@ -1,0 +1,13 @@
+name: Homarr
+description: Homarr is a sleek, modern self-hosted application dashboard designed to organize and manage your entire homelab or self-hosted stack in a beautifully customizable single portal.
+category: dashboards
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homarr.png
+warnings:
+  - If you mount the host Docker socket (/var/run/docker.sock) to enable Homarr's Docker integration, be aware that this container receives elevated privileges over your Docker host.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: HOMARR_SECRET_KEY
+    description: 64-character hex key used to encrypt stored API credentials (generate with openssl rand -hex 32)
+    default: ""

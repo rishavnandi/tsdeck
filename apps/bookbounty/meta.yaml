@@ -1,0 +1,15 @@
+name: BookBounty
+description: BookBounty is a self-hosted e-book downloader, automatic searcher, and sync companion for Readarr. It allows you to automatically query and scrape books from diverse providers and feeds them straight to your library.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png
+depends_on:
+  - readarr
+warnings:
+  - Requires integration with a running Readarr instance and its API key for automatic collection scraping.
+required_env_vars:
+  - name: READARR_API_KEY
+    description: API Key retrieved from your Readarr General Settings
+    default: change-me-please
+  - name: DATA_DIR
+    description: Parent directory where books are stored (matched with Readarr path)
+    default: /opt/tsdeck/data

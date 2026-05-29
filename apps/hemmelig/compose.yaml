@@ -1,0 +1,24 @@
+services:
+  hemmelig:
+    image: hemmeligapp/hemmelig:v7
+    container_name: hemmelig
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - DATABASE_URL=file:/app/database/hemmelig.db
+      - BETTER_AUTH_SECRET=change-this-to-a-secure-secret-min-32-chars
+      - BETTER_AUTH_URL=${BETTER_AUTH_URL}
+      - NODE_ENV=production
+      - HEMMELIG_BASE_URL=${HEMMELIG_BASE_URL}
+    volumes:
+      - hemmelig-database:/app/database
+      - hemmelig-uploads:/app/uploads
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "hemmelig"
+    restart: always
+
+volumes:
+  hemmelig-database:
+  hemmelig-uploads:

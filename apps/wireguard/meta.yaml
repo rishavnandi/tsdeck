@@ -1,0 +1,14 @@
+name: WireGuard
+description: WireGuard (via wg-easy) is an extremely simple, fast, and modern virtual private network (VPN) client and server. It provides a secure, encrypted tunnel to your home network, managed via a user-friendly web interface.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wireguard.png
+warnings:
+  - Requires elevated system administration capabilities (NET_ADMIN) to modify network interfaces and configure routing.
+  - Exposes port 51820 (UDP) on the host for incoming WireGuard VPN client connections.
+required_env_vars:
+  - name: WG_PASSWORD
+    description: Admin password to secure the wg-easy web management portal
+    default: change-me-please
+  - name: WG_HOST
+    description: Public IP address or DDNS domain name of your server for client connections
+    default: 192.168.1.100

@@ -1,0 +1,10 @@
+name: Excalidraw
+description: Excalidraw is a virtual collaborative whiteboard tool for sketching hand-drawn-like diagrams. It provides a simple, highly responsive canvas supporting real-time collaboration, shape styling, and secure local file exporting.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/excalidraw.png
+warnings:
+  - To enable real-time collaboration with other users, ensure the application is configured with a proper HTTPS domain.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

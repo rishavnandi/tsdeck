@@ -1,0 +1,11 @@
+name: Blinko
+description: Blinko is an open-source, self-hosted personal note-taking tool designed for quick capture and organization. It allows you to rapidly log thoughts, links, and snippets with absolute privacy, complete with full markdown support and simple search capabilities.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/note-mark.png
+warnings:
+  - Ensure that your Postgres database password is kept secure and not shared.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+

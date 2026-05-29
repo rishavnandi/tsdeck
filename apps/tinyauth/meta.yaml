@@ -1,0 +1,16 @@
+name: TinyAuth
+description: TinyAuth is a lightweight forward authentication portal that integrates with reverse proxies like Traefik to provide simple, secure authentication for your self-hosted apps.
+category: security
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tinyauth.png
+warnings:
+  - Ensure TINYAUTH_USERS is configured with a secure bcrypt hash to restrict access, and TINYAUTH_APP_URL matches your Tailscale network address.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: TINYAUTH_APP_URL
+    description: The external URL where TinyAuth is hosted (e.g. https://tinyauth.your-tailnet.ts.net)
+    default: https://tinyauth.your-tailnet.ts.net
+  - name: TINYAUTH_USERS
+    description: JSON array representing users and bcrypt-hashed passwords (use double quotes inside the string)
+    default: '[{\"username\":\"admin\",\"hash\":\"$$2a$$10$$XmFhL/uW1wJ.rYJ8H5aP/eXF9.xK4hNq3l4fPz2mK1i2o3p4q5s6t\"}]'

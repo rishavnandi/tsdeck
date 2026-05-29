@@ -1,0 +1,7 @@
+name: Memos
+description: Memos is an open-source, self-hosted memo hub and note-taking application designed to capture thoughts, tasks, and bookmarks instantly. It supports markdown formatting, tags, sharing, and provides a lightweight, clean social-network-style feed of your personal notes.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/memos.png
+warnings:
+  - Data is stored in a local SQLite database within the memos-data volume; ensure regular backups of this volume to prevent data loss.
+required_env_vars: []

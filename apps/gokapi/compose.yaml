@@ -1,0 +1,17 @@
+services:
+  gokapi:
+    image: f0rc3/gokapi:latest
+    container_name: gokapi
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - gokapi-data:/app/data
+      - gokapi-config:/app/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "gokapi"
+    restart: always
+
+volumes:
+  gokapi-data:
+  gokapi-config:

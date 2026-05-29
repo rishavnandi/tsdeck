@@ -1,0 +1,14 @@
+name: Karakeep
+description: Karakeep is a modern, self-hosted bookmarking and read-it-later application featuring full-text search, automated page archival, screenshot capturing, and AI-assisted search integrations.
+category: bookmarks
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/karakeep.png
+warnings:
+  - Requires companion Meilisearch and Alpine Chrome containers (included) for full-text search indexing and webpage snapshot capabilities.
+  - You must generate unique secure values for NEXTAUTH_SECRET and MEILI_MASTER_KEY to secure user sessions and internal search queries.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: NEXTAUTH_URL
+    description: Publicly accessible HTTPS URL of the Karakeep instance
+    default: http://localhost:3000

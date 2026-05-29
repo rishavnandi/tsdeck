@@ -1,0 +1,10 @@
+name: Gitea
+description: Gitea is a painless, self-hosted Git service that is extremely fast, lightweight, and easy to deploy. It provides comprehensive collaborative features including repository management, issue tracking, pull requests, and built-in package registries.
+category: development
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gitea.png
+warnings:
+  - By default, Gitea uses an embedded SQLite database which is ideal for lightweight setups, but should be migrated to PostgreSQL or MySQL for high-concurrency environments.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,11 @@
+name: Tailscale App Connector Node
+description: Tailscale App Connector Node is an infrastructure component that routes traffic to third-party SaaS applications through your local network. It allows you to enforce secure, identity-aware access controls on public SaaS resources by anchoring their traffic to a trusted node.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png
+warnings:
+  - Requires a valid Tailscale Auth Key (TS_AUTHKEY) to register the node with your Tailnet.
+  - Requires the NET_ADMIN capability and access to the host's TUN device (/dev/net/tun) to configure networking.
+required_env_vars:
+  - name: TS_AUTHKEY
+    description: Tailscale Auth Key (tskey-auth-...) to authorize this node in your Tailnet
+    default: tskey-auth-change-me

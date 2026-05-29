@@ -1,0 +1,13 @@
+name: Radarr
+description: Radarr is a movie collection manager and PVR that automates the downloading of films via torrents and Usenet, organizing your library and matching high-quality metadata.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/radarr.png
+warnings:
+  - Requires a download client (like qBittorrent) and indexers (via Prowlarr) configured to automate media fetching. Ensure the mapped media directory has correct write permissions.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

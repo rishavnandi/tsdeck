@@ -1,0 +1,36 @@
+services:
+  librum:
+    image: ghcr.io/librum-reader/librum-server
+    container_name: librum
+    depends_on:
+      - librum-db
+    environment:
+      - JWTValidIssuer=${LIBRUM_JWT_ISSUER:-localhost}
+      - JWTKey=changethisjwtsecretkey12345!
+      - DBConnectionString=Server=librum-db;port=3306;Database=librum;Uid=librum;Pwd=changethisdbpassword;
+      - AdminEmail=${LIBRUM_ADMIN_EMAIL}
+      - AdminPassword=${LIBRUM_ADMIN_PASSWORD}
+      - TZ=${TZ}
+    volumes:
+      - librum-storage:/var/lib/librum-server/librum_storage
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "librum"
+    restart: always
+
+  librum-db:
+    image: docker.io/library/mariadb:latest
+    container_name: librum-db
+    environment:
+      - MARIADB_USER=librum
+      - MARIADB_PASSWORD=changethisdbpassword
+      - MARIADB_DATABASE=librum
+      - MARIADB_ROOT_PASSWORD=changethisdbrootpassword
+      - TZ=${TZ}
+    volumes:
+      - librum-db-data:/var/lib/mysql
+    restart: always
+
+volumes:
+  librum-storage:
+  librum-db-data:

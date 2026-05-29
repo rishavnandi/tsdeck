@@ -1,0 +1,35 @@
+services:
+  rustdesk-server:
+    image: rustdesk/rustdesk-server:latest
+    container_name: rustdesk-server
+    command: hbbs
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - rustdesk-hbbs:/root
+    ports:
+      - "21115:21115"
+      - "21116:21116"
+      - "21116:21116/udp"
+      - "21118:21118"
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "rustdesk-server"
+    restart: always
+
+  rustdesk-relay:
+    image: rustdesk/rustdesk-server:latest
+    container_name: rustdesk-relay
+    command: hbbr
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - rustdesk-hbbr:/root
+    ports:
+      - "21117:21117"
+      - "21119:21119"
+    restart: always
+
+volumes:
+  rustdesk-hbbs:
+  rustdesk-hbbr:

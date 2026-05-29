@@ -1,0 +1,10 @@
+name: Pihole
+description: Pi-hole is a network-wide ad blocker that acts as a private DNS server to intercept and block ads and tracking domains for all devices on your local network.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
+warnings:
+  - Requires port 53 to be available on the host, which may conflict with existing DNS stub listeners (like systemd-resolved).
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

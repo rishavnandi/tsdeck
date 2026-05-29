@@ -1,0 +1,45 @@
+services:
+  xwiki:
+    image: xwiki:lts-mariadb
+    container_name: xwiki
+    environment:
+      - TZ=${TZ}
+      - DB_USER=xwiki
+      - DB_PASSWORD=xwiki_password
+      - DB_DATABASE=xwiki
+      - DB_HOST=xwiki-db
+    volumes:
+      - xwiki-data:/usr/local/xwiki
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "xwiki"
+    depends_on:
+      xwiki-db:
+        condition: service_healthy
+    restart: always
+
+  xwiki-db:
+    image: mariadb:10.11
+    container_name: xwiki-db
+    environment:
+      - TZ=${TZ}
+      - MARIADB_ROOT_PASSWORD=mariadb_root_password
+      - MARIADB_USER=xwiki
+      - MARIADB_PASSWORD=xwiki_password
+      - MARIADB_DATABASE=xwiki
+    volumes:
+      - xwiki-db-data:/var/lib/mysql
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_bin"
+      - "--explicit-defaults-for-timestamp=1"
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -p$${MARIADB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  xwiki-data:
+  xwiki-db-data:

@@ -1,0 +1,17 @@
+name: Librum
+description: Librum is a self-hosted server for the Librum e-book reader client. It manages all your books, synchronization data, reader preferences, and reading progress across all of your personal devices.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/librum.png
+warnings:
+  - Make sure to choose strong passwords for the database connections and your administrator account.
+  - The DB password and root password environment variables are required to secure the SQL database.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: LIBRUM_ADMIN_EMAIL
+    description: Administrator email address for the first login
+    default: admin@example.com
+  - name: LIBRUM_ADMIN_PASSWORD
+    description: Administrator password for the first login
+    default: changethisadminpassword

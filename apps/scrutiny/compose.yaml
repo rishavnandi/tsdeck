@@ -1,0 +1,21 @@
+services:
+  scrutiny:
+    image: ghcr.io/analogj/scrutiny:master-omnibus
+    container_name: scrutiny
+    environment:
+      - TZ=${TZ}
+    cap_add:
+      - SYS_RAWIO
+    volumes:
+      - /run/udev:/run/udev:ro
+      - /dev:/dev
+      - scrutiny-config:/opt/scrutiny/config
+      - scrutiny-influxdb:/opt/scrutiny/influxdb
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "scrutiny"
+    restart: always
+
+volumes:
+  scrutiny-config:
+  scrutiny-influxdb:

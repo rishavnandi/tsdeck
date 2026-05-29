@@ -1,0 +1,15 @@
+services:
+  guacamole:
+    image: jasonrivers/nginx-guacamole:latest
+    container_name: guacamole
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - guacamole-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "guacamole"
+    restart: always
+
+volumes:
+  guacamole-config:

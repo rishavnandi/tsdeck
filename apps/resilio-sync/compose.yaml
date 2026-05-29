@@ -1,0 +1,21 @@
+services:
+  resilio-sync:
+    image: docker.io/linuxserver/resilio-sync:latest
+    container_name: resilio-sync
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - resilio-sync-config:/config
+      - resilio-sync-downloads:/downloads
+      - resilio-sync-data:/sync
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "resilio-sync"
+    restart: always
+
+volumes:
+  resilio-sync-config:
+  resilio-sync-downloads:
+  resilio-sync-data:

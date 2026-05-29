@@ -1,0 +1,18 @@
+name: Frigate
+description: Frigate is an open-source, local NVR (Network Video Recorder) with real-time AI object detection. It is designed to run locally, processing camera streams in real-time to detect people, vehicles, and other custom objects with minimal latency.
+category: automation
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/frigate.png
+depends_on:
+  - home-assistant
+warnings:
+  - Frigate requires significant CPU resources and is highly optimized for Google Coral TPUs or hardware-accelerated video decoding (GPU).
+  - Requires a privileged container execution to access hardware acceleration drivers (GPU/TPU) and host devices.
+  - Relies on a /dev/shm size of 512MB (configured automatically) to handle high-resolution video streams in shared memory.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: FRIGATE_RTSP_PASSWORD
+    description: Secure RTSP password for camera streams
+    default: generate-a-secure-rtsp-password
+

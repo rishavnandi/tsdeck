@@ -1,0 +1,10 @@
+name: DumbDo
+description: DumbDo is a self-hosted, minimalistic, and distraction-free task management tool designed to keep your to-do lists simple and incredibly fast.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/todoist.png
+warnings:
+  - You can optionally set a PIN by adding a `DUMBDO_PIN` environment variable to secure access to your notes.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,21 @@
+services:
+  kavita:
+    image: jvmilazz0/kavita:latest
+    container_name: kavita
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - kavita-manga:/manga
+      - kavita-comics:/comics
+      - kavita-books:/books
+      - kavita-config:/kavita/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "kavita"
+    restart: always
+
+volumes:
+  kavita-manga:
+  kavita-comics:
+  kavita-books:
+  kavita-config:

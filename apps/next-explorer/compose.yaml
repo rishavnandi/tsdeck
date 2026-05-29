@@ -1,0 +1,22 @@
+services:
+  next-explorer:
+    image: docker.io/nxzai/explorer:latest
+    container_name: next-explorer
+    environment:
+      - NODE_ENV=production
+      - SESSION_SECRET=change-me-please-session-secret
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - next-explorer-config:/config
+      - next-explorer-cache:/cache
+      - ${ACCESS_PATH}:/mnt/Files
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "next-explorer"
+    restart: unless-stopped
+
+volumes:
+  next-explorer-config:
+  next-explorer-cache:

@@ -1,0 +1,19 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - navidrome-data:/data
+      - navidrome-music:/music:ro
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "navidrome"
+    restart: always
+
+volumes:
+  navidrome-data:
+  navidrome-music:

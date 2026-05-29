@@ -1,0 +1,9 @@
+name: Nanote
+description: Nanote is an ultra-minimalistic, distraction-free, self-hosted note-taking app that prioritizes markdown editing, speed, and privacy.
+category: documents
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flatnotes.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+

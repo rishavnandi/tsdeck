@@ -1,0 +1,17 @@
+services:
+  linkding:
+    image: sissbruecker/linkding:latest
+    container_name: linkding
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - linkding-data:/etc/linkding/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "linkding"
+    restart: always
+
+volumes:
+  linkding-data:

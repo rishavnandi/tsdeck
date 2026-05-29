@@ -1,0 +1,20 @@
+services:
+  homarr:
+    image: ghcr.io/homarr-labs/homarr:latest
+    container_name: homarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - SECRET_ENCRYPTION_KEY=${HOMARR_SECRET_KEY}
+    volumes:
+      - homarr-appdata:/appdata
+      # Uncomment the below if you want Docker socket integration:
+      # - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "homarr"
+    restart: always
+
+volumes:
+  homarr-appdata:

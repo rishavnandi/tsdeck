@@ -1,0 +1,22 @@
+services:
+  bookbounty:
+    image: thewicklowwolf/bookbounty:latest
+    container_name: bookbounty
+    volumes:
+      - bookbounty-config:/bookbounty/config
+      - ${DATA_DIR}/media/books:/bookbounty/downloads
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - selected_path_type=folder
+      - library_scan_on_completion=true
+      - readarr_address=http://readarr:8787
+      - readarr_api_key=${READARR_API_KEY}
+      - sync_schedule=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+      - search_type=non-fiction
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "bookbounty"
+    restart: always
+
+volumes:
+  bookbounty-config:

@@ -1,0 +1,38 @@
+services:
+  miniflux:
+    image: docker.io/miniflux/miniflux:latest
+    container_name: miniflux
+    environment:
+      - DATABASE_URL=postgres://miniflux:miniflux_password@miniflux-db:5432/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - BASE_URL=https://miniflux.${TAILNET_NAME}
+      - TZ=${TZ}
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "miniflux"
+    depends_on:
+      miniflux-db:
+        condition: service_healthy
+    restart: always
+
+  miniflux-db:
+    image: docker.io/postgres:15-alpine
+    container_name: miniflux-db
+    environment:
+      - POSTGRES_USER=miniflux
+      - POSTGRES_PASSWORD=miniflux_password
+      - POSTGRES_DB=miniflux
+    volumes:
+      - miniflux-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  miniflux-db-data:

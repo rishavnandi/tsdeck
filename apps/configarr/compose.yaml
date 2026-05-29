@@ -1,0 +1,17 @@
+services:
+  configarr:
+    image: ghcr.io/raydak-labs/configarr:latest
+    container_name: configarr
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - configarr-config:/app/config
+      - configarr-repos:/app/repos
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "configarr"
+    restart: "no"
+
+volumes:
+  configarr-config:
+  configarr-repos:

@@ -1,0 +1,53 @@
+services:
+  docmost:
+    image: docmost/docmost:latest
+    container_name: docmost
+    environment:
+      APP_URL: http://localhost:3000
+      APP_SECRET: docmost_secure_app_secret_123456
+      DATABASE_URL: postgresql://docmost:docmost_db_pass@docmost-db:5432/docmost?schema=public
+      REDIS_URL: redis://docmost-redis:6379
+    volumes:
+      - docmost-data:/app/data/storage
+    depends_on:
+      docmost-db:
+        condition: service_healthy
+      docmost-redis:
+        condition: service_healthy
+    restart: always
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "docmost"
+
+  docmost-db:
+    image: postgres:16-alpine
+    container_name: docmost-db
+    environment:
+      POSTGRES_DB: docmost
+      POSTGRES_USER: docmost
+      POSTGRES_PASSWORD: docmost_db_pass
+    volumes:
+      - docmost-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docmost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  docmost-redis:
+    image: redis:7.2-alpine
+    container_name: docmost-redis
+    volumes:
+      - docmost-redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+volumes:
+  docmost-data:
+  docmost-db-data:
+  docmost-redis-data:

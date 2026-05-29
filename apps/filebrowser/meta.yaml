@@ -1,0 +1,13 @@
+name: File Browser
+description: File Browser is a lightweight, self-hosted web-based file manager that provides a clean interface for managing, uploading, downloading, and sharing files on your server. It features custom user accounts with varying permissions, text/image editors, and shell execution capabilities.
+category: files
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
+warnings:
+  - Warning: This application has full access to the configured host directory (${DATA_DIR}). Ensure you restrict access and secure your authentication credentials to prevent unauthorized file manipulation.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: DATA_DIR
+    description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
+    default: /opt/tsdeck/data

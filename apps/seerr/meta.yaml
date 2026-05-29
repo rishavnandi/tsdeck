@@ -1,0 +1,12 @@
+name: Seerr
+description: Seerr is a request management and media discovery tool for the Plex ecosystem, allowing users to browse, discover, and request content with automated delivery integration.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/overseerr.png
+depends_on:
+  - plex
+warnings:
+  - Requires a running Plex media server instance and integration with Sonarr/Radarr to process media requests.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

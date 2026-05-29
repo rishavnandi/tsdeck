@@ -1,0 +1,22 @@
+name: Technitium DNS Server
+description: Technitium DNS Server is an open-source self-hosted DNS server that can be used for self-hosting a local DNS server for privacy and security. It features a powerful web console with support for DNS-over-HTTPS, DNS-over-TLS, blocklists, and advanced caching.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/technitium.png
+warnings:
+  - Requires port 53 (TCP/UDP) to be free on the host. You may need to disable local system resolvers (like systemd-resolved) to successfully start this service.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: TECHNITIUM_DNS_DOMAIN
+    description: The primary domain name used by this DNS Server to identify itself
+    default: dns-server.local
+  - name: TECHNITIUM_ADMIN_PASSWORD
+    description: Web console administrator password
+    default: admin
+  - name: TECHNITIUM_DNS_RECURSION
+    description: Recursion options (Allow, Deny, AllowOnlyForPrivateNetworks, UseSpecifiedNetworkACL)
+    default: Allow
+  - name: TECHNITIUM_DNS_FORWARDERS
+    description: Comma-separated list of forwarder DNS addresses (e.g., 1.1.1.1, 8.8.8.8)
+    default: 1.1.1.1,8.8.8.8

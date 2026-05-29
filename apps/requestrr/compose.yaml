@@ -1,0 +1,15 @@
+services:
+  requestrr:
+    image: darkalfx/requestrr:latest
+    container_name: requestrr
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - requestrr-config:/root/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "requestrr"
+    restart: always
+
+volumes:
+  requestrr-config:

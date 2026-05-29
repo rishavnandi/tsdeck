@@ -1,0 +1,11 @@
+services:
+  fossflow:
+    image: stnsmith/fossflow:latest
+    container_name: fossflow
+    environment:
+      - TZ=${TZ}
+      - PUBLIC_URL=${PUBLIC_URL}
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "fossflow"
+    restart: always

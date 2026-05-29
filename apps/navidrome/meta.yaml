@@ -1,0 +1,10 @@
+name: Navidrome
+description: Navidrome is a modern, lightweight, and highly efficient self-hosted music server and streamer that is compatible with Subsonic and Airsonic clients. It allows you to access and stream your personal music collection from any device, with support for major audio formats, transcoding, and rich metadata scanning.
+category: media
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/navidrome.png
+warnings:
+  - Scanning large music libraries during initial setup may cause transient high CPU and disk utilization.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

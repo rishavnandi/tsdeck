@@ -1,0 +1,10 @@
+name: Actual Budget
+description: Actual Budget is a privacy-first, self-hosted personal finance manager and budgeting tool that uses a zero-based budgeting system. It offers multi-device synchronization, bank syncing capabilities, and secure local-first data storage.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/actual-budget.png
+warnings:
+  - Requires configured HTTPS to enable secure web-based access and client-side encryption.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

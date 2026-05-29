@@ -1,0 +1,13 @@
+name: Recyclarr
+description: Recyclarr is a CLI tool that automates the synchronization of recommended TRaSH Guides configurations, quality profiles, and custom formats to your Sonarr and Radarr instances.
+category: media-management
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/recyclarr.png
+depends_on:
+  - sonarr
+  - radarr
+warnings:
+  - Requires running and accessible Sonarr and Radarr instances to synchronize configurations and API keys.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

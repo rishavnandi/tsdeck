@@ -1,0 +1,11 @@
+name: Flaresolverr
+description: FlareSolverr is a proxy server designed to bypass Cloudflare and DDoS-Guard protection mechanisms for scraping web content. It runs a headless browser instance in the background to solve Javascript challenges and return the raw HTML of target sites.
+category: downloads
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flaresolverr.png
+warnings:
+  - FlareSolverr spawns headless Chrome instances to solve challenges, which can be highly CPU and RAM intensive under heavy request loads.
+  - Due to changing Cloudflare protections, FlareSolverr may occasionally require manual updates or experience temporary solver failures.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

@@ -1,0 +1,17 @@
+services:
+  actual-budget:
+    image: docker.io/actualbudget/actual-server:latest
+    container_name: actual-budget
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - actual-budget-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "actual-budget"
+    restart: always
+
+volumes:
+  actual-budget-data:

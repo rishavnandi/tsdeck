@@ -1,0 +1,10 @@
+name: Wallos
+description: Wallos is an open-source, self-hosted web application that simplifies subscription tracking and management. It provides a highly visual dashboard to track recurring payments, categorize subscriptions, monitor currency exchange rates, and view detailed spending statistics.
+category: home
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wallos.png
+warnings:
+  - Requires persistent data storage. Ensure your volumes are securely backed up to prevent losing your financial tracking records.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

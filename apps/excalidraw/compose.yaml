@@ -1,0 +1,17 @@
+services:
+  excalidraw:
+    image: excalidraw/excalidraw:latest
+    container_name: excalidraw
+    environment:
+      - NODE_ENV=production
+      - TZ=${TZ}
+    stdin_open: true
+    volumes:
+      - excalidraw-config:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "excalidraw"
+    restart: always
+
+volumes:
+  excalidraw-config:

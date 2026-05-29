@@ -1,0 +1,16 @@
+services:
+  clipcascade:
+    image: docker.io/sathvikrao/clipcascade:latest
+    container_name: clipcascade
+    environment:
+      - TZ=${TZ}
+      - CC_MAX_MESSAGE_SIZE_IN_MiB=1
+    volumes:
+      - clipcascade-data:/database
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "clipcascade"
+    restart: always
+
+volumes:
+  clipcascade-data:

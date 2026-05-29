@@ -1,0 +1,11 @@
+name: FossFLOW
+description: FossFLOW is an open-source, self-hosted, lightweight flowchart and diagram creation tool built with privacy and simplicity in mind.
+category: productivity
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/diagrams-net.png
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: PUBLIC_URL
+    description: Public domain or URL where FossFLOW is hosted
+    default: http://localhost:3000

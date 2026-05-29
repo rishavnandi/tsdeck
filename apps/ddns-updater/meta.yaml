@@ -1,0 +1,10 @@
+name: DDNS Updater
+description: DDNS Updater is a lightweight, universal daemon to update dynamic DNS A and/or AAAA records periodically for multiple DNS providers, featuring a web UI.
+category: networking
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ddns-updater.png
+warnings:
+  - Requires dynamic DNS records configuration in `/updater/data/config.json` to work properly.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam

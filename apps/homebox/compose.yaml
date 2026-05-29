@@ -1,0 +1,18 @@
+services:
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:latest
+    container_name: homebox
+    user: "65532:65532"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - homebox-data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "homebox"
+    restart: always
+
+volumes:
+  homebox-data:

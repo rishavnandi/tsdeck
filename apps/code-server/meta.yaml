@@ -1,0 +1,13 @@
+name: Code-server
+description: Code-server is VS Code running on a remote server, accessible directly through any web browser, enabling you to code on any device with a consistent development environment.
+category: development
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png
+warnings:
+  - Mounts the host's workspaces or configuration. Securing the password is critical to protect your system from unauthorized command execution.
+required_env_vars:
+  - name: TZ
+    description: Timezone for the container
+    default: Europe/Amsterdam
+  - name: CODE_SERVER_PASSWORD
+    description: Password to access the web-based VS Code environment
+    default: change-me-please
