@@ -127,7 +127,7 @@ app.get("/s/:slug", async (c) => {
   const data = await c.env.TSDECK_KV.get(slug);
 
   if (!data) {
-    return c.text("Slug expired or not found. Please regenerate at https://tsdeck.pages.dev", 404);
+    return c.text("Slug expired or not found. Please regenerate at https://tsdeck-api.rishavnandi.workers.dev", 404);
   }
 
   const { apps: appIds } = JSON.parse(data) as { apps: string[] };

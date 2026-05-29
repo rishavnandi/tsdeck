@@ -6,7 +6,7 @@ Pick your self-hosted apps from a catalog, get a one-line `curl` command, and ru
 
 ## How it works
 
-1. **Browse** the app catalog at [tsdeck.pages.dev](https://tsdeck.pages.dev)
+1. **Browse** the app catalog at [tsdeck-api.rishavnandi.workers.dev](https://tsdeck-api.rishavnandi.workers.dev)
 2. **Select** the apps you want
 3. **Copy** the generated `curl` command
 4. **Run** it on your Linux server
@@ -100,18 +100,18 @@ bun run validate-apps
 
 ### Deploy
 
-**API (Cloudflare Workers)**
+TSDeck uses Cloudflare Workers **Static Assets** — the frontend and API are deployed together as a single Worker.
+
 ```bash
-cd api && bun run deploy
+cd api && bunx wrangler deploy
 ```
+
 Deployed at `https://tsdeck-api.rishavnandi.workers.dev`
 
-**Frontend (Cloudflare Pages)**
-1. Connect your GitHub repo in the Cloudflare Dashboard → Pages
-2. Set **Root directory** to `/frontend`
-3. Set **Framework preset** to `None`
-4. Leave build command blank
-5. Deploy — live at `https://tsdeck.pages.dev`
+- `https://tsdeck-api.rishavnandi.workers.dev/` — Frontend (catalog UI)
+- `https://tsdeck-api.rishavnandi.workers.dev/apps` — API (app catalog JSON)
+- `https://tsdeck-api.rishavnandi.workers.dev/generate` — API (generate slug)
+- `https://tsdeck-api.rishavnandi.workers.dev/s/:slug` — API (serve bootstrap script)
 
 ## Contributing Apps
 
