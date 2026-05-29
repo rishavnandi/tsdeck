@@ -350,13 +350,6 @@
     "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hemmelig.png"
   },
   {
-    "id": "hoarder",
-    "name": "Hoarder",
-    "description": "Hoarder is a self-hosted bookmarking application designed for saving and organizing links, articles, PDF files, and custom notes. It features a modern interface, auto-tagging using local/external AI models, full-text search, and automated page archiving/screenshot capture using headless Chrome.",
-    "category": "bookmarks",
-    "icon": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hoarder.png"
-  },
-  {
     "id": "homarr",
     "name": "Homarr",
     "description": "Homarr is a sleek, modern self-hosted application dashboard designed to organize and manage your entire homelab or self-hosted stack in a beautifully customizable single portal.",

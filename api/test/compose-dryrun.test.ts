@@ -137,7 +137,7 @@ describe("Dry-Run Compose Assembly", () => {
     expect(compose).toContain("volumes:");
   });
 
-  it("assembles the full 134-app stack without errors", () => {
+  it("assembles the full 133-app stack without errors", () => {
     const allIds = APPS.map((a) => a.id);
     expect(() => assembleCompose(allIds)).not.toThrow();
 
@@ -159,8 +159,8 @@ describe("Dry-Run Compose Assembly", () => {
       .split("\n")
       .filter((line) => /^  [a-z][\w-]*:/.test(line))
       .map((line) => line.trim().replace(":", ""));
-    // At least 134 apps + tsdproxy + extras like immich sub-services
-    expect(serviceNames.length).toBeGreaterThanOrEqual(135);
+    // At least 133 apps + tsdproxy + extras like immich sub-services
+    expect(serviceNames.length).toBeGreaterThanOrEqual(134);
   });
 
   it("does not leak top-level keys from individual templates into services block", () => {
@@ -197,7 +197,7 @@ describe("Dry-Run Script Generation", () => {
     expect(script).toContain("assemble_compose");
     expect(script).toContain("DRY_RUN");
 
-    // Should reference all 134 apps in the app array
+    // Should reference all 133 apps in the app array
     for (const app of APPS) {
       expect(script).toContain(`"${app.id}"`);
     }

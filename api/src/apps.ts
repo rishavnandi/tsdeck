@@ -682,20 +682,6 @@ export const APPS: { id: string; meta: AppMeta }[] = [
     },
   },
   {
-    id: "hoarder",
-    meta: {
-      name: "Hoarder",
-      description: "Hoarder is a self-hosted bookmarking application designed for saving and organizing links, articles, PDF files, and custom notes. It features a modern interface, auto-tagging using local/external AI models, full-text search, and automated page archiving/screenshot capture using headless Chrome.",
-      category: "bookmarks",
-      icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hoarder.png",
-      warnings: ["Running automated Chrome archiving jobs and Meilisearch full-text indexing can be memory and CPU intensive.", "Make sure both Meilisearch master key and NextAuth secrets are randomly generated and securely stored."],
-      required_env_vars: [
-        { name: "TZ", description: "Timezone for the container", default: "Europe/Amsterdam" },
-        { name: "HOARDER_NEXTAUTH_URL", description: "Fully qualified public URL of your Hoarder instance (used for authentication redirects)", default: "http://localhost:3000" }
-      ],
-    },
-  },
-  {
     id: "homarr",
     meta: {
       name: "Homarr",
@@ -852,7 +838,7 @@ export const APPS: { id: string; meta: AppMeta }[] = [
       description: "Karakeep is a modern, self-hosted bookmarking and read-it-later application featuring full-text search, automated page archival, screenshot capturing, and AI-assisted search integrations.",
       category: "bookmarks",
       icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/karakeep.png",
-      warnings: ["Requires companion Meilisearch and Alpine Chrome containers (included) for full-text search indexing and webpage snapshot capabilities.", "You must generate unique secure values for NEXTAUTH_SECRET and MEILI_MASTER_KEY to secure user sessions and internal search queries."],
+      warnings: ["Requires companion Meilisearch and Alpine Chrome containers (included) for full-text search indexing and webpage snapshot capabilities.", "You must generate unique secure values for NEXTAUTH_SECRET and MEILI_MASTER_KEY to secure user sessions and internal search queries.", "Running automated Chrome archiving jobs and Meilisearch full-text indexing can be memory and CPU intensive."],
       required_env_vars: [
         { name: "TZ", description: "Timezone for the container", default: "Europe/Amsterdam" },
         { name: "NEXTAUTH_URL", description: "Publicly accessible HTTPS URL of the Karakeep instance", default: "http://localhost:3000" }
