@@ -837,7 +837,7 @@ export const APPS: { id: string; meta: AppMeta }[] = [
       name: "Karakeep",
       description: "Karakeep is a modern, self-hosted bookmarking and read-it-later application featuring full-text search, automated page archival, screenshot capturing, and AI-assisted search integrations.",
       category: "bookmarks",
-      icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/karakeep.png",
+      icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/hoarder.png",
       warnings: ["Requires companion Meilisearch and Alpine Chrome containers (included) for full-text search indexing and webpage snapshot capabilities.", "You must generate unique secure values for NEXTAUTH_SECRET and MEILI_MASTER_KEY to secure user sessions and internal search queries.", "Running automated Chrome archiving jobs and Meilisearch full-text indexing can be memory and CPU intensive."],
       required_env_vars: [
         { name: "TZ", description: "Timezone for the container", default: "Europe/Amsterdam" },
