@@ -1,6 +1,6 @@
 name = "tsdeck-api"
 main = "src/index.ts"
-compatibility_date = "2026-05-30"
+compatibility_date = "2025-05-29"
 compatibility_flags = ["nodejs_compat"]
 
 [[kv_namespaces]]
