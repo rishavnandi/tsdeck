@@ -12,6 +12,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "code-server"
+      tsdproxy.port.1: "443/https:8443/https"
     restart: always
 
 volumes:
