@@ -52,11 +52,24 @@ run_if_not_dry() {
 # --- Docker Installation ---
 install_docker() {
   log_info "Docker not found. Installing..."
-  if [[ "\$DRY_RUN" == "1" ]]; then
+  if [[ "$DRY_RUN" == "1" ]]; then
     log_info "[DRY-RUN] Would execute: curl -fsSL https://get.docker.com | sh"
     return
   fi
   curl -fsSL https://get.docker.com | sh
+
+  # Ensure Docker service is running (handles both systemd and sysvinit)
+  if command -v systemctl &> /dev/null; then
+    systemctl enable --now docker.service 2>/dev/null || true
+  elif command -v service &> /dev/null; then
+    service docker start 2>/dev/null || true
+  fi
+
+  # Add current user to docker group so docker commands work without sudo
+  if getent group docker &> /dev/null; then
+    usermod -aG docker "$(whoami)" 2>/dev/null || true
+  fi
+
   log_success "Docker installed."
 }
 
@@ -64,10 +77,21 @@ check_docker() {
   if ! command -v docker &> /dev/null; then
     install_docker
   fi
-  if ! docker info &> /dev/null; then
-    log_error "Docker daemon is not running. Please start Docker and try again."
-    exit 1
-  fi
+
+  # Try docker info; if it fails because of permissions or daemon not ready, retry a few times.
+  local attempts=0
+  local max_attempts=10
+  while ! docker info &> /dev/null; do
+    attempts=$((attempts + 1))
+    if [[ $attempts -ge $max_attempts ]]; then
+      log_error "Docker daemon is not running or current user lacks Docker permissions."
+      log_info "If Docker was just installed, you may need to log out and back in (or run 'newgrp docker') for group changes to take effect."
+      exit 1
+    fi
+    log_info "Waiting for Docker daemon to be ready... ($attempts/$max_attempts)"
+    sleep 2
+  done
+
   log_success "Docker is ready."
 }
 
@@ -172,8 +196,17 @@ assemble_compose() {
   tmpdir="\$(mktemp -d)"
   trap "rm -rf \$tmpdir" EXIT
 
-  log_info "Creating TSDeck directory at \$TSDECK_DIR..."
-  mkdir -p "\$TSDECK_DIR"
+  log_info "Creating TSDeck directory at $TSDECK_DIR..."
+  if ! mkdir -p "$TSDECK_DIR" 2>/dev/null; then
+    log_warn "Permission denied for $TSDECK_DIR. Trying with sudo..."
+    sudo mkdir -p "$TSDECK_DIR" || {
+      log_error "Failed to create $TSDECK_DIR even with sudo."
+      log_info "Try running the script with sudo, or set TSDECK_DIR to a writable path:"
+      log_info "  export TSDECK_DIR=~/tsdeck && curl -fsSL ... | bash"
+      exit 1
+    }
+    sudo chown "$(whoami):$(whoami)" "$TSDECK_DIR" 2>/dev/null || sudo chown "$(whoami):$(id -gn)" "$TSDECK_DIR" 2>/dev/null || true
+  fi
 
   log_info "Writing environment file..."
   {
@@ -215,12 +248,18 @@ assemble_compose() {
 }
 
 start_containers() {
-  if [[ "\$DRY_RUN" == "1" ]]; then
+  if [[ "$DRY_RUN" == "1" ]]; then
     log_info "[DRY-RUN] Would start containers: docker compose up -d --remove-orphans"
     return
   fi
   log_info "Starting containers..."
-  (cd "\$TSDECK_DIR" && docker compose up -d --remove-orphans)
+  if ! (cd "$TSDECK_DIR" && docker compose up -d --remove-orphans); then
+    log_warn "docker compose failed. Trying with sudo..."
+    (cd "$TSDECK_DIR" && sudo docker compose up -d --remove-orphans) || {
+      log_error "Failed to start containers even with sudo."
+      exit 1
+    }
+  fi
   log_success "Containers started."
 }
 
