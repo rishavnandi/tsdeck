@@ -11,9 +11,3 @@ required_env_vars:
   - name: DATA_DIR
     description: Unified parent directory for all self-hosted data (enables instantaneous hardlinks)
     default: /opt/tsdeck/data
-  - name: FB_USERNAME
-    description: File Browser admin username
-    default: admin
-  - name: FB_PASSWORD
-    description: File Browser admin password
-    default: admin

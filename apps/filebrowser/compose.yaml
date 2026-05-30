@@ -4,8 +4,6 @@ services:
     container_name: filebrowser
     environment:
       - FB_DATABASE=/database/filebrowser.db
-      - FB_USERNAME=${FB_USERNAME:-admin}
-      - FB_PASSWORD=${FB_PASSWORD:-admin}
       - PUID=1000
       - PGID=1000
       - TZ=${TZ}
