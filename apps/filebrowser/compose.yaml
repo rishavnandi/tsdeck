@@ -11,16 +11,12 @@ services:
       - TZ=${TZ}
     entrypoint: ["/bin/sh", "-c"]
     command: |
-      set -e
       if [ ! -f /database/filebrowser.db ]; then
-        filebrowser -d /database/filebrowser.db -c /config/settings.json config init --address 0.0.0.0 --port 80 --root /srv
+        filebrowser -d /database/filebrowser.db -c /config/settings.json config init --address 0.0.0.0 --port 80 --root /srv || exit 1
       fi
-      filebrowser -d /database/filebrowser.db -c /config/settings.json config set --address 0.0.0.0 --port 80 --root /srv
-      if filebrowser -d /database/filebrowser.db -c /config/settings.json users ls | grep -q "^$${FILEBROWSER_USERNAME}[[:space:]]"; then
-        filebrowser -d /database/filebrowser.db -c /config/settings.json users update "$${FILEBROWSER_USERNAME}" --password "$${FILEBROWSER_PASSWORD}" --perm.admin --scope /
-      else
-        filebrowser -d /database/filebrowser.db -c /config/settings.json users add "$${FILEBROWSER_USERNAME}" "$${FILEBROWSER_PASSWORD}" --perm.admin --scope /
-      fi
+      filebrowser -d /database/filebrowser.db -c /config/settings.json config set --address 0.0.0.0 --port 80 --root /srv || exit 1
+      filebrowser -d /database/filebrowser.db -c /config/settings.json users update 1 --username "$${FILEBROWSER_USERNAME}" --password "$${FILEBROWSER_PASSWORD}" --perm.admin --scope / || \
+        filebrowser -d /database/filebrowser.db -c /config/settings.json users add "$${FILEBROWSER_USERNAME}" "$${FILEBROWSER_PASSWORD}" --perm.admin --scope / || exit 1
       exec filebrowser -d /database/filebrowser.db -c /config/settings.json --address 0.0.0.0 --port 80 --root /srv
     volumes:
       - filebrowser-db:/database
