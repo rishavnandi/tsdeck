@@ -218,12 +218,8 @@ assemble_compose() {
 
   log_info "Configuring tsdproxy..."
   mkdir -p "$TSDECK_DIR/config"
-  if [ ! -f "$TSDECK_DIR/config/tsdproxy.yaml" ]; then
-    curl -fsSL "$REPO_URL/config/tsdproxy.yaml" > "$TSDECK_DIR/config/tsdproxy.yaml"
-    log_success "tsdproxy.yaml written."
-  else
-    log_info "tsdproxy.yaml already exists, skipping (preserving custom config)."
-  fi
+  curl -fsSL "$REPO_URL/config/tsdproxy.yaml" > "$TSDECK_DIR/config/tsdproxy.yaml"
+  log_success "tsdproxy.yaml written."
 
   log_info "Assembling docker-compose.yml..."
   {
