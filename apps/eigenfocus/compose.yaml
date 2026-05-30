@@ -10,6 +10,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "eigenfocus"
+      tsdproxy.port.1: "443/https:3000/http"
     restart: always
 
 volumes:

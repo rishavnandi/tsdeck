@@ -18,6 +18,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "technitium"
+      tsdproxy.port.1: "443/https:5380/http"
     restart: always
 
 volumes:

@@ -8,6 +8,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "uptime-kuma"
+      tsdproxy.port.1: "443/https:3001/http"
     restart: always
 
 volumes:

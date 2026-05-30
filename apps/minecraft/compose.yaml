@@ -16,9 +16,6 @@ services:
       - 25565:25565
     volumes:
       - minecraft-data:/data
-    labels:
-      tsdproxy.enable: "true"
-      tsdproxy.name: "minecraft"
     restart: always
 
 volumes:

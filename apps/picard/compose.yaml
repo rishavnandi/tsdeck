@@ -12,6 +12,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "picard"
+      tsdproxy.port.1: "443/https:8080/http"
     restart: always
 
 volumes:

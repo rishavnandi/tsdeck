@@ -11,6 +11,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "nodered"
+      tsdproxy.port.1: "443/https:1880/http"
     restart: always
 
 volumes:

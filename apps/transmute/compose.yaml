@@ -11,6 +11,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "transmute"
+      tsdproxy.port.1: "443/https:3313/http"
     healthcheck:
       test: ["CMD", "wget", "-q", "-O", "/dev/null", "--tries=1", "http://localhost:3313/api/health/ready"]
       interval: 1m

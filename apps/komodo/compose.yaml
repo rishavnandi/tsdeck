@@ -27,6 +27,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "komodo"
+      tsdproxy.port.1: "443/https:9120/http"
     restart: always
 
   komodo-periphery:

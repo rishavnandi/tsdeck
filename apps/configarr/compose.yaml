@@ -7,9 +7,6 @@ services:
     volumes:
       - configarr-config:/app/config
       - configarr-repos:/app/repos
-    labels:
-      tsdproxy.enable: "true"
-      tsdproxy.name: "configarr"
     restart: "no"
 
 volumes:

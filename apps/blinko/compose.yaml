@@ -14,6 +14,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "blinko"
+      tsdproxy.port.1: "443/https:11111/http"
     restart: always
 
   blinko-db:

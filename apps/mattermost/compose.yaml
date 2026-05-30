@@ -18,6 +18,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "mattermost"
+      tsdproxy.port.1: "443/https:8065/http"
     depends_on:
       mattermost-db:
         condition: service_healthy

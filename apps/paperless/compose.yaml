@@ -32,6 +32,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "paperless"
+      tsdproxy.port.1: "443/https:8000/http"
 
   paperless-db:
     image: postgres:16-alpine

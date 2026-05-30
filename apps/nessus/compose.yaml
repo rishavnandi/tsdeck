@@ -9,4 +9,5 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "nessus"
+      tsdproxy.port.1: "443/https:8834/http"
     restart: always

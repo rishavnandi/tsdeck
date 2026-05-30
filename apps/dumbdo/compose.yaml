@@ -9,6 +9,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "dumbdo"
+      tsdproxy.port.1: "443/https:8080/http"
     restart: always
 
 volumes:

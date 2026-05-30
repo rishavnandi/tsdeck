@@ -15,9 +15,6 @@ services:
       - "5520:5520/udp"
     tty: true
     stdin_open: true
-    labels:
-      tsdproxy.enable: "true"
-      tsdproxy.name: "hytale"
     restart: unless-stopped
 
 volumes:

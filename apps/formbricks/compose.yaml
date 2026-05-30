@@ -20,6 +20,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "formbricks"
+      tsdproxy.port.1: "443/https:3000/http"
     depends_on:
       formbricks-db:
         condition: service_healthy

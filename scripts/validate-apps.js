@@ -70,23 +70,41 @@ function validate() {
     let composeContent = "";
     try {
       composeContent = readFileSync(composePath, "utf-8");
-      if (!composeContent.includes("tsdproxy.enable")) {
-        console.error(`  ❌ compose.yaml missing tsdproxy.enable label`);
-        errors++;
-      }
-      if (!composeContent.includes("tsdproxy.name")) {
-        console.error(`  ❌ compose.yaml missing tsdproxy.name label`);
-        errors++;
+      // Apps that legitimately should NOT have tsdproxy labels:
+      // - Tailscale networking infra (exit-node, subnet-router, app-connector)
+      // - Utility containers with no web UI (watchtower, recyclarr, configarr)
+      // - Game servers using raw TCP/UDP (minecraft, hytale)
+      const noTsdproxyApps = new Set([
+        "tailscale-exit-node", "tailscale-subnet-router-node", "tailscale-app-connector-node",
+        "watchtower", "recyclarr", "configarr",
+        "minecraft", "hytale",
+      ]);
+      if (!noTsdproxyApps.has(appId)) {
+        if (!composeContent.includes("tsdproxy.enable")) {
+          console.error(`  ❌ compose.yaml missing tsdproxy.enable label`);
+          errors++;
+        }
+        if (!composeContent.includes("tsdproxy.name")) {
+          console.error(`  ❌ compose.yaml missing tsdproxy.name label`);
+          errors++;
+        }
       }
 
       // Ensure no Tailscale sidecar (we use TSDProxy instead)
-      if (composeContent.includes("tailscale/tailscale")) {
-        console.error(`  ❌ compose.yaml contains Tailscale sidecar image (use TSDProxy labels instead)`);
-        errors++;
-      }
-      if (composeContent.includes("network_mode: service:tailscale")) {
-        console.error(`  ❌ compose.yaml contains Tailscale sidecar network mode (use TSDProxy labels instead)`);
-        errors++;
+      // Exception: tailscale-exit-node, tailscale-subnet-router-node, tailscale-app-connector-node
+      // legitimately use the tailscale image as infrastructure
+      const tailscaleInfraApps = new Set([
+        "tailscale-exit-node", "tailscale-subnet-router-node", "tailscale-app-connector-node",
+      ]);
+      if (!tailscaleInfraApps.has(appId)) {
+        if (composeContent.includes("tailscale/tailscale")) {
+          console.error(`  ❌ compose.yaml contains Tailscale sidecar image (use TSDProxy labels instead)`);
+          errors++;
+        }
+        if (composeContent.includes("network_mode: service:tailscale")) {
+          console.error(`  ❌ compose.yaml contains Tailscale sidecar network mode (use TSDProxy labels instead)`);
+          errors++;
+        }
       }
     } catch {
       // already counted above

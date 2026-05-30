@@ -12,6 +12,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "kavita"
+      tsdproxy.port.1: "443/https:5000/http"
     restart: always
 
 volumes:

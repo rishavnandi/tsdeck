@@ -27,9 +27,7 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
-    labels:
-      tsdproxy.enable: "true"
-      tsdproxy.name: "tailscale-subnet-router"
+    labels: {}
     restart: always
 
 volumes:

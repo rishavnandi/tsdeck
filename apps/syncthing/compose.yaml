@@ -16,6 +16,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "syncthing"
+      tsdproxy.port.1: "443/https:8384/http"
     restart: always
 
 volumes:
