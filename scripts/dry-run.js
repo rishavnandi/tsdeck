@@ -54,11 +54,14 @@ function assembleCompose(appIds) {
   parts.push("  tsdproxy:");
   parts.push("    image: almeidapaulopt/tsdproxy:latest");
   parts.push("    container_name: tsdproxy");
+  parts.push("    ports:");
+  parts.push("      - \"8080:8080\"");
   parts.push("    environment:");
   parts.push("      - TSDPROXY_AUTHKEY=${TS_AUTHKEY}");
   parts.push("    volumes:");
   parts.push("      - /var/run/docker.sock:/var/run/docker.sock");
   parts.push("      - tsdproxy-data:/data");
+  parts.push("      - ./config:/config");
   parts.push("    restart: always");
   parts.push("");
 

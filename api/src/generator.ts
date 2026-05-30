@@ -226,8 +226,6 @@ assemble_compose() {
     echo "      - \"8080:8080\""
     echo "    environment:"
     echo "      - TSDPROXY_AUTHKEY=\$TS_AUTHKEY"
-    echo "    extra_hosts:"
-    echo "      - \"host.docker.internal:host-gateway\""
     echo "    volumes:"
     echo "      - /var/run/docker.sock:/var/run/docker.sock"
     echo "      - tsdproxy-data:/data"
