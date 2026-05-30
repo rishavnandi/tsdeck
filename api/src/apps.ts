@@ -449,7 +449,7 @@ export const APPS: { id: string; meta: AppMeta }[] = [
         { name: "TZ", description: "Timezone for the container", default: "Europe/Amsterdam" },
         { name: "DATA_DIR", description: "Unified parent directory for all self-hosted data (enables instantaneous hardlinks)", default: "/opt/tsdeck/data" },
         { name: "FILEBROWSER_USERNAME", description: "File Browser admin username", default: "admin" },
-        { name: "FILEBROWSER_PASSWORD", description: "File Browser admin password", default: "admin" }
+        { name: "FILEBROWSER_PASSWORD", description: "File Browser admin password", default: "tsdeck-admin" }
       ],
     },
   },

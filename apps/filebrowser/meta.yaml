@@ -16,4 +16,4 @@ required_env_vars:
     default: admin
   - name: FILEBROWSER_PASSWORD
     description: File Browser admin password
-    default: admin
+    default: tsdeck-admin

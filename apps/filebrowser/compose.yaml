@@ -9,15 +9,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TZ}
-    entrypoint: ["/bin/sh", "-c"]
-    command: |
-      if [ ! -f /database/filebrowser.db ]; then
-        filebrowser -d /database/filebrowser.db -c /config/settings.json config init --address 0.0.0.0 --port 80 --root /srv || exit 1
-      fi
-      filebrowser -d /database/filebrowser.db -c /config/settings.json config set --address 0.0.0.0 --port 80 --root /srv || exit 1
-      filebrowser -d /database/filebrowser.db -c /config/settings.json users update 1 --username "$${FILEBROWSER_USERNAME}" --password "$${FILEBROWSER_PASSWORD}" --perm.admin --scope / || \
-        filebrowser -d /database/filebrowser.db -c /config/settings.json users add "$${FILEBROWSER_USERNAME}" "$${FILEBROWSER_PASSWORD}" --perm.admin --scope / || exit 1
-      exec filebrowser -d /database/filebrowser.db -c /config/settings.json --address 0.0.0.0 --port 80 --root /srv
+    entrypoint: ["/bin/sh"]
+    command:
+      - -c
+      - if [ ! -f /database/filebrowser.db ]; then filebrowser -d /database/filebrowser.db -c /config/settings.json config init --address 0.0.0.0 --port 80 --root /srv --minimumPasswordLength 1 || exit 1; fi; filebrowser -d /database/filebrowser.db -c /config/settings.json config set --address 0.0.0.0 --port 80 --root /srv --minimumPasswordLength 1 || exit 1; filebrowser -d /database/filebrowser.db -c /config/settings.json users update 1 --username "$$FILEBROWSER_USERNAME" --password "$$FILEBROWSER_PASSWORD" --perm.admin --scope / || filebrowser -d /database/filebrowser.db -c /config/settings.json users add "$$FILEBROWSER_USERNAME" "$$FILEBROWSER_PASSWORD" --perm.admin --scope / || exit 1; exec filebrowser -d /database/filebrowser.db -c /config/settings.json --address 0.0.0.0 --port 80 --root /srv
     volumes:
       - filebrowser-db:/database
       - filebrowser-config:/config
