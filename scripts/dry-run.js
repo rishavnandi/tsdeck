@@ -56,6 +56,8 @@ function assembleCompose(appIds) {
   parts.push("    container_name: tsdproxy");
   parts.push("    ports:");
   parts.push("      - \"8080:8080\"");
+  parts.push("    extra_hosts:");
+  parts.push("      - \"host.docker.internal:host-gateway\"");
   parts.push("    environment:");
   parts.push("      - TSDPROXY_AUTHKEY=${TS_AUTHKEY}");
   parts.push("    volumes:");

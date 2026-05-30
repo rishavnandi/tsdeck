@@ -1,0 +1,22 @@
+defaultProxyProvider: default
+docker:
+  local:
+    host: unix:///var/run/docker.sock
+    targetHostname: host.docker.internal
+    tryDockerInternalNetwork: true
+    defaultProxyProvider: default
+lists: {}
+tailscale:
+  providers:
+    default:
+      authKey: ""
+      controlUrl: https://controlplane.tailscale.com
+  dataDir: /data/
+http:
+  hostname: 0.0.0.0
+  port: 8080
+log:
+  level: info
+  json: false
+proxyAccessLog: true
+adminAllowLocalhost: true

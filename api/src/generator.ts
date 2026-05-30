@@ -216,6 +216,15 @@ assemble_compose() {
   } > "\$env_file"
   log_success ".env written."
 
+  log_info "Configuring tsdproxy..."
+  mkdir -p "$TSDECK_DIR/config"
+  if [ ! -f "$TSDECK_DIR/config/tsdproxy.yaml" ]; then
+    curl -fsSL "$REPO_URL/config/tsdproxy.yaml" > "$TSDECK_DIR/config/tsdproxy.yaml"
+    log_success "tsdproxy.yaml written."
+  else
+    log_info "tsdproxy.yaml already exists, skipping (preserving custom config)."
+  fi
+
   log_info "Assembling docker-compose.yml..."
   {
     echo "services:"
@@ -224,6 +233,8 @@ assemble_compose() {
     echo "    container_name: tsdproxy"
     echo "    ports:"
     echo "      - \"8080:8080\""
+    echo "    extra_hosts:"
+    echo "      - \"host.docker.internal:host-gateway\""
     echo "    environment:"
     echo "      - TSDPROXY_AUTHKEY=\$TS_AUTHKEY"
     echo "    volumes:"
