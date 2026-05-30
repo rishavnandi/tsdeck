@@ -447,7 +447,9 @@ export const APPS: { id: string; meta: AppMeta }[] = [
       warnings: ["Warning: This application has full access to the configured host directory (${DATA_DIR}). Ensure you restrict access and secure your authentication credentials to prevent unauthorized file manipulation."],
       required_env_vars: [
         { name: "TZ", description: "Timezone for the container", default: "Europe/Amsterdam" },
-        { name: "DATA_DIR", description: "Unified parent directory for all self-hosted data (enables instantaneous hardlinks)", default: "/opt/tsdeck/data" }
+        { name: "DATA_DIR", description: "Unified parent directory for all self-hosted data (enables instantaneous hardlinks)", default: "/opt/tsdeck/data" },
+        { name: "FILEBROWSER_USERNAME", description: "File Browser admin username", default: "admin" },
+        { name: "FILEBROWSER_PASSWORD", description: "File Browser admin password", default: "admin" }
       ],
     },
   },

@@ -4,11 +4,27 @@ services:
     container_name: filebrowser
     environment:
       - FB_DATABASE=/database/filebrowser.db
+      - FILEBROWSER_USERNAME=${FILEBROWSER_USERNAME}
+      - FILEBROWSER_PASSWORD=${FILEBROWSER_PASSWORD}
       - PUID=1000
       - PGID=1000
       - TZ=${TZ}
+    entrypoint: ["/bin/sh", "-c"]
+    command: |
+      set -e
+      if [ ! -f /database/filebrowser.db ]; then
+        filebrowser -d /database/filebrowser.db -c /config/settings.json config init --address 0.0.0.0 --port 80 --root /srv
+      fi
+      filebrowser -d /database/filebrowser.db -c /config/settings.json config set --address 0.0.0.0 --port 80 --root /srv
+      if filebrowser -d /database/filebrowser.db -c /config/settings.json users ls | grep -q "^$${FILEBROWSER_USERNAME}[[:space:]]"; then
+        filebrowser -d /database/filebrowser.db -c /config/settings.json users update "$${FILEBROWSER_USERNAME}" --password "$${FILEBROWSER_PASSWORD}" --perm.admin --scope /
+      else
+        filebrowser -d /database/filebrowser.db -c /config/settings.json users add "$${FILEBROWSER_USERNAME}" "$${FILEBROWSER_PASSWORD}" --perm.admin --scope /
+      fi
+      exec filebrowser -d /database/filebrowser.db -c /config/settings.json --address 0.0.0.0 --port 80 --root /srv
     volumes:
       - filebrowser-db:/database
+      - filebrowser-config:/config
       - ${DATA_DIR}:/srv
     labels:
       tsdproxy.enable: "true"
@@ -18,3 +34,4 @@ services:
 
 volumes:
   filebrowser-db:
+  filebrowser-config:
