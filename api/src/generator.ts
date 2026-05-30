@@ -217,8 +217,8 @@ assemble_compose() {
   log_success ".env written."
 
   log_info "Configuring tsdproxy..."
-  mkdir -p "$TSDECK_DIR/config"
-  curl -fsSL "$REPO_URL/config/tsdproxy.yaml" > "$TSDECK_DIR/config/tsdproxy.yaml"
+  mkdir -p "$TSDECK_DIR/config" 2>/dev/null || sudo mkdir -p "$TSDECK_DIR/config"
+  curl -fsSL "$REPO_URL/config/tsdproxy.yaml" | sudo tee "$TSDECK_DIR/config/tsdproxy.yaml" > /dev/null
   log_success "tsdproxy.yaml written."
 
   log_info "Assembling docker-compose.yml..."
